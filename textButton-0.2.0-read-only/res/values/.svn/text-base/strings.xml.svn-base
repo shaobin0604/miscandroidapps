@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, TextButtonActivity!</string>
+    <string name="app_name">text button demo</string>
+</resources>

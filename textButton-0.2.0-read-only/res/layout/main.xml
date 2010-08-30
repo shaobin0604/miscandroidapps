@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:myapp="http://schemas.android.com/apk/res/com.easymorse.textbutton"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent" android:background="@drawable/background_color">
+	<LinearLayout android:layout_width="fill_parent"
+		android:layout_height="10dip" />
+	<HorizontalScrollView 
+		android:layout_height="wrap_content" 
+		android:layout_width="fill_parent"
+		android:scrollbars="none">
+	<LinearLayout android:layout_width="fill_parent"
+		android:layout_height="40dip">
+		<View android:layout_width="2px" android:layout_height="fill_parent"
+			android:background="#ffffffff" />
+		<com.easymorse.textbutton.TextButton android:id="@+id/b1" 
+			android:layout_width="102dip" android:layout_height="fill_parent"
+			android:text="中央一套"
+			android:gravity="center_vertical|center_horizontal"
+			android:background="@drawable/button" android:focusable="true"
+			android:clickable="true" myapp:regularColor="@drawable/button_color" myapp:selectedColor="@drawable/button_color"/>
+		<View android:layout_width="2px" android:layout_height="fill_parent"
+			android:background="#ffffffff" />
+		<com.easymorse.textbutton.TextButton android:id="@+id/b2" 
+			android:layout_width="102dip" android:layout_height="fill_parent"
+			android:clickable="true" android:text="中央二套"
+			android:gravity="center_vertical|center_horizontal"
+			android:background="@drawable/button" android:focusable="true" />
+		<View android:layout_width="2px" android:layout_height="fill_parent"
+			android:background="#ffffffff" />
+		<com.easymorse.textbutton.TextButton android:id="@+id/b3" 
+			android:layout_width="102dip" android:layout_height="fill_parent"
+			android:clickable="true" android:text="中央三套"
+			android:gravity="center_vertical|center_horizontal"
+			android:background="@drawable/button" android:focusable="true"
+			android:enabled="true" />
+		<View android:layout_width="2px" android:layout_height="fill_parent"
+			android:background="#ffffffff" />
+		<com.easymorse.textbutton.TextButton android:id="@+id/b4" 
+			android:layout_width="102dip" android:layout_height="fill_parent"
+			android:clickable="true" android:text="中央四套"
+			android:gravity="center_vertical|center_horizontal"
+			android:background="@drawable/button" android:focusable="true"
+			android:enabled="true" />
+		<View android:layout_width="2px" android:layout_height="fill_parent"
+			android:background="#ffffffff" />
+		<com.easymorse.textbutton.TextButton android:id="@+id/b5" 
+			android:layout_width="102dip" android:layout_height="fill_parent"
+			android:clickable="true" android:text="中央五套"
+			android:gravity="center_vertical|center_horizontal"
+			android:background="@drawable/button" android:focusable="true"
+			android:enabled="true" />
+		<View android:layout_width="2px" android:layout_height="fill_parent"
+			android:background="#ffffffff" />
+		<com.easymorse.textbutton.TextButton android:id="@+id/b6" 
+			android:layout_width="102dip" android:layout_height="fill_parent"
+			android:clickable="true" android:text="中央六套"
+			android:gravity="center_vertical|center_horizontal"
+			android:background="@drawable/button" android:focusable="true"
+			android:enabled="true" />
+		<View android:layout_width="2px" android:layout_height="fill_parent"
+			android:background="#ffffffff" />
+	</LinearLayout>
+	</HorizontalScrollView>
+	<LinearLayout android:id="@+id/c1" android:layout_width="fill_parent" android:layout_height="fill_parent" android:background="#ffffffff">
+	</LinearLayout>
+</LinearLayout>
