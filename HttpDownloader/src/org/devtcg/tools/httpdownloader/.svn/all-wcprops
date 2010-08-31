@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/177/trunk/HttpDownloader/src/org/devtcg/tools/httpdownloader
+END
+Main.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/62/trunk/HttpDownloader/src/org/devtcg/tools/httpdownloader/Main.java
+END
+DownloadHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/62/trunk/HttpDownloader/src/org/devtcg/tools/httpdownloader/DownloadHandler.java
+END
+DownloadProcessor.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/177/trunk/HttpDownloader/src/org/devtcg/tools/httpdownloader/DownloadProcessor.java
+END

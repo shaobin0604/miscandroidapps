@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center_vertical"
+    >
+    
+    <TextView
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:text="Source URL"
+    	/>
+    	
+    <EditText
+    	android:id="@+id/src"
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:layout_marginBottom="16dip"
+    	/>
+
+	<TextView  
+	    android:layout_width="fill_parent" 
+	    android:layout_height="wrap_content" 
+	    android:text="Destination Path"
+    	/>
+    	
+    <EditText
+    	android:id="@+id/dst"
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:layout_marginBottom="16dip"
+    	/>
+    	
+    <Button
+    	android:id="@+id/get"
+    	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:text="GET"
+    	android:layout_gravity="center_horizontal"
+    	/>
+
+</LinearLayout>

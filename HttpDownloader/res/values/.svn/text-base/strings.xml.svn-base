@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">HttpDownloader</string>
+    <string name="default_src_url">http://android-random.googlecode.com/files/</string>
+    <string name="default_dst_path">/data/app</string>
+</resources>
