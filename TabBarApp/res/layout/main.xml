@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<view xmlns:android="http://schemas.android.com/apk/res/android"
+	class="com.sampleapp.MainActivity$iRelativeLayout"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background = "#C5CCD4FF"
+	>
+		<LinearLayout
+			android:id = "@+id/TabLayout_One"
+			android:layout_width = "fill_parent"
+			android:layout_height = "fill_parent"
+			android:layout_above = "@+id/Tabs"
+			>
+			<ScrollView android:layout_width="fill_parent" android:layout_height="wrap_content">
+				<RelativeLayout
+					android:layout_width = "fill_parent"
+					android:layout_height = "fill_parent"
+					android:visibility = "visible"
+					>
+						<Button
+							android:id = "@+id/ButtonOne"
+							android:layout_width = "wrap_content"
+							android:layout_height = "fill_parent"
+							android:text = "h3h3h3"
+						/>
+						<Button
+							android:id = "@+id/ButtonTwo"
+							android:layout_width = "wrap_content"
+							android:layout_height = "wrap_content"
+							android:text = "wass\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ns\ngggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg"
+							android:layout_below ="@+id/ButtonOne"
+						/>
+						<Button
+							android:id = "@+id/ButtonThree"
+							android:layout_width = "wrap_content"
+							android:layout_height = "wrap_content"
+							android:text = "wass"
+							android:layout_below ="@+id/ButtonTwo"
+						/>
+					</RelativeLayout>
+				</ScrollView>
+			</LinearLayout>
+			
+		<LinearLayout
+			android:id = "@+id/TabLayout_Two"
+			android:layout_width = "fill_parent"
+			android:layout_height = "fill_parent"
+			android:layout_above = "@+id/Tabs"
+			>
+			<ScrollView android:layout_width="fill_parent" android:layout_height="wrap_content">
+					<RelativeLayout
+						android:layout_width = "fill_parent"
+						android:layout_height = "fill_parent"
+						android:visibility = "visible"
+						android:layout_above = "@+id/Tabs"
+						>
+						<Button
+							android:layout_width = "wrap_content"
+							android:layout_height = "wrap_content"
+							android:text = "HEHE YO"
+						/>
+					</RelativeLayout>	
+			</ScrollView>
+		</LinearLayout>
+		<LinearLayout
+			android:id = "@+id/TabLayout_Three"
+			android:layout_width = "fill_parent"
+			android:layout_height = "fill_parent"
+			android:layout_above = "@+id/Tabs"
+			>
+			<ScrollView android:layout_width="fill_parent" android:layout_height="wrap_content">
+				<RelativeLayout
+					android:layout_width = "fill_parent"
+					android:layout_height = "fill_parent"
+					android:visibility = "visible"
+					android:layout_above = "@+id/Tabs"
+					>
+					<TextView
+						android:textColor="@android:color/black"
+						android:layout_width = "wrap_content"
+						android:layout_height = "wrap_content"
+						android:text = "Text View o.o!!!"
+					/>
+				</RelativeLayout>
+			</ScrollView>
+		</LinearLayout>
+		<LinearLayout
+			android:id = "@+id/TabLayout_Four"
+			android:layout_width = "fill_parent"
+			android:layout_height = "fill_parent"
+			android:layout_above = "@+id/Tabs"
+			>
+			<ScrollView android:layout_width="fill_parent" android:layout_height="wrap_content">		
+				<RelativeLayout
+					android:id = "@+id/TabLayout_Four"
+					android:layout_width = "fill_parent"
+					android:layout_height = "fill_parent"
+					android:visibility = "visible"
+					android:layout_above = "@+id/Tabs"
+					>
+					<TextView
+						android:textColor="@android:color/black"
+						android:layout_width = "wrap_content"
+						android:layout_height = "wrap_content"
+						android:text = "Well .. It's obvious - isn't it?"
+					/>
+				</RelativeLayout>
+			</ScrollView>
+		</LinearLayout>			
+	<view
+		class="com.sampleapp.MainActivity$iTab"
+		android:id="@+id/Tabs"
+		android:layout_width = "fill_parent"
+		android:layout_height = "49px"
+		android:layout_alignParentBottom = "true"
+	/>	
+</view>

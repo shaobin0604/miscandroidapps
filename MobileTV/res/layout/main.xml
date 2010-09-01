@@ -13,16 +13,17 @@
 			android:layout_width="wrap_content"
 			android:layout_centerVertical="true"
 			android:textAppearance="?android:attr/textAppearanceLarge"
-			android:text="Mobile TV"
-			/>
+			android:text="手机电视"/>
 	</RelativeLayout>
 	
-	<LinearLayout android:layout_width="fill_parent"
+	<LinearLayout
+		android:id="@+id/tab_bar" 
+		android:layout_width="fill_parent"
 		android:layout_height="@dimen/tab_bar_height"
 		android:orientation="horizontal"
 		android:paddingLeft="5dip"
 		android:paddingRight="5dip">
-		<TextView android:id="@+id/b1" 
+		<TextView android:id="@+id/tab_service_all" 
 			android:layout_width="102dip" 
 			android:layout_height="fill_parent"
 			android:text="全部频道"
@@ -33,7 +34,7 @@
 		<View android:layout_width="2dip" 
 			android:layout_height="fill_parent"
 			 />
-		<TextView android:id="@+id/b2" 
+		<TextView android:id="@+id/tab_service_favorite" 
 			android:layout_width="102dip" 
 			android:layout_height="fill_parent"
 			android:clickable="true" 
@@ -44,7 +45,7 @@
 		<View android:layout_width="2dip" 
 			android:layout_height="fill_parent"
 			 />
-		<TextView android:id="@+id/b3" 
+		<TextView android:id="@+id/tab_content_remind" 
 			android:layout_width="102dip" 
 			android:layout_height="fill_parent"
 			android:clickable="true" 
@@ -54,4 +55,19 @@
 			android:focusable="true"
 			android:enabled="true" />
 	</LinearLayout>
+	
+	<ViewFlipper android:id="@+id/view_flipper"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_weight="1.0">
+		<ListView android:id="@+id/list_service_all"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"/>
+		<ListView android:id="@+id/list_service_favorite"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"/>
+		<ListView android:id="@+id/list_content_remind"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"/>
+	</ViewFlipper>
 </LinearLayout>
