@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+频道条目，显示如下内容
+1.频道名称
+2.当前节目时间段
+3.当前节目名称
+4.频道状态图标(a.收藏 b.加锁)
+ -->
+<RelativeLayout
+  	xmlns:android="http://schemas.android.com/apk/res/android"
+  	android:layout_width="fill_parent"
+  	android:layout_height="wrap_content"
+  	android:paddingLeft="20dip"
+  	android:paddingRight="20dip"
+  	android:paddingTop="10dip"
+  	android:paddingBottom="10dip">
+  	<TextView android:id="@+id/service_name"
+  		android:layout_width="wrap_content"
+  		android:layout_height="wrap_content"
+  		android:textAppearance="?android:attr/textAppearanceLarge"
+  		android:text="SBSS"/>
+  	<TextView android:id="@+id/content_time"
+  		android:layout_width="wrap_content"
+  		android:layout_height="wrap_content"
+  		android:layout_below="@id/service_name"
+  		android:text="2009.07.27.12:00"/>
+  	<TextView android:id="@+id/content_name"
+  		android:layout_width="wrap_content"
+  		android:layout_height="wrap_content"
+  		android:layout_below="@id/service_name"
+  		android:layout_toRightOf="@id/content_time"
+  		android:layout_marginLeft="10dip"
+  		android:text="News Program"/>
+  	<ImageView android:id="@+id/state_indicator"
+  		android:src="@drawable/lock_channel"
+  		android:layout_width="wrap_content"
+  		android:layout_height="wrap_content"
+  		android:layout_alignParentRight="true"
+  		android:layout_centerVertical="true"/>
+</RelativeLayout>

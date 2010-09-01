@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+节目条目，显示如下内容
+1.节目名称
+2.节目播放时间段
+3.节目播放日期
+4.节目播放频道
+5.节目提醒icon
+ -->
+<RelativeLayout
+  	xmlns:android="http://schemas.android.com/apk/res/android"
+  	android:layout_width="fill_parent"
+  	android:layout_height="wrap_content"
+  	android:paddingLeft="20dip"
+  	android:paddingRight="20dip"
+  	android:paddingTop="10dip"
+  	android:paddingBottom="10dip">
+  	<TextView android:id="@+id/content_name"
+  		android:layout_width="wrap_content"
+  		android:layout_height="wrap_content"
+  		android:textAppearance="?android:attr/textAppearanceLarge"
+  		android:text="CCTV News"/>
+  	<TextView android:id="@+id/content_time"
+  		android:layout_width="wrap_content"
+  		android:layout_height="wrap_content"
+  		android:layout_below="@id/content_name"
+  		android:text="12:00 - 12:30"/>
+  	<TextView android:id="@+id/content_date"
+  		android:layout_width="wrap_content"
+  		android:layout_height="wrap_content"
+  		android:layout_toRightOf="@id/content_time"
+  		android:layout_below="@id/content_name"
+  		android:layout_marginLeft="10dip"
+  		android:text="Today"/>
+  	<TextView android:id="@+id/service_name"
+  		android:layout_width="wrap_content"
+  		android:layout_height="wrap_content"
+  		android:layout_below="@id/content_name"
+  		android:layout_toRightOf="@id/content_date"
+  		android:layout_marginLeft="10dip"
+  		android:text="CCTV-1"/>
+  	<ImageView android:id="@+id/state_indicator"
+  		android:src="@drawable/lock_channel"
+  		android:layout_width="wrap_content"
+  		android:layout_height="wrap_content"
+  		android:layout_alignParentRight="true"
+  		android:layout_centerVertical="true"/>
+</RelativeLayout>
