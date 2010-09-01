@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Cancel HTTP GET Example</string>
+    <string name="url">http://android.googlecode.com/files/linux-2.6.23-android-m5-rc14.tar.gz</string>
+</resources>
