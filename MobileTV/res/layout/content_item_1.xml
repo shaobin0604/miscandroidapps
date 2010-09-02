@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- 
 节目条目，显示如下内容
-1.节目名称
-2.节目播放时间段
-3.节目播放日期
-4.节目播放频道
-5.节目提醒icon
+1.当前节目标识
+2.节目名称
+3.节目播放时间段
+4.节目提醒标识
  -->
 <RelativeLayout
   	xmlns:android="http://schemas.android.com/apk/res/android"
@@ -15,41 +14,29 @@
   	android:paddingRight="10dip"
   	android:paddingTop="5dip"
   	android:paddingBottom="5dip">
+  	<ImageView android:id="@+id/current_indicator"
+  		android:layout_width="24dip"
+  		android:layout_height="24dip"
+  		android:layout_centerVertical="true"
+  		android:src="@drawable/play"/>
   	<TextView android:id="@+id/content_name"
   		android:layout_width="wrap_content"
   		android:layout_height="wrap_content"
+  		android:layout_toRightOf="@id/current_indicator"
+  		android:layout_marginLeft="5dip"
   		android:textAppearance="?android:attr/textAppearanceLarge"
   		android:text="新闻30分"/>
   	<TextView android:id="@+id/content_time"
   		android:layout_width="wrap_content"
   		android:layout_height="wrap_content"
   		android:layout_below="@id/content_name"
+  		android:layout_toRightOf="@id/current_indicator"
+  		android:layout_marginLeft="5dip"
   		android:text="12:00 - 12:30"/>
-  	<TextView android:id="@+id/content_date"
-  		android:layout_width="wrap_content"
-  		android:layout_height="wrap_content"
-  		android:layout_toRightOf="@id/content_time"
-  		android:layout_below="@id/content_name"
-  		android:layout_marginLeft="10dip"
-  		android:text="今天 "/>
-  	<TextView android:id="@+id/service_name"
-  		android:layout_width="wrap_content"
-  		android:layout_height="wrap_content"
-  		android:layout_below="@id/content_name"
-  		android:layout_toRightOf="@id/content_date"
-  		android:layout_marginLeft="10dip"
-  		android:text="中央一台"/>
   	<ImageView android:id="@+id/remind_indicator"
   		android:src="@drawable/clock"
   		android:layout_width="wrap_content"
   		android:layout_height="wrap_content"
   		android:layout_alignParentRight="true"
   		android:layout_centerVertical="true"/>
-  	<!-- 
-  	<ImageView android:visibility="invisible"
-  		android:layout_width="24dip"
-  		android:layout_height="24dip"
-  		android:layout_alignParentRight="true"
-  		android:layout_alignTop="@id/content_time"/>
-  	 -->
 </RelativeLayout>

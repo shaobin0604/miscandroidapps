@@ -4,24 +4,35 @@
 1.频道名称
 2.当前节目时间段
 3.当前节目名称
-4.频道状态图标(a.收藏 b.加锁)
+4.加密图标
+5.收藏图标
  -->
 <RelativeLayout
   	xmlns:android="http://schemas.android.com/apk/res/android"
   	android:layout_width="fill_parent"
   	android:layout_height="wrap_content"
-  	android:paddingLeft="20dip"
-  	android:paddingRight="20dip"
-  	android:paddingTop="10dip"
+  	android:paddingLeft="5dip"
+  	android:paddingRight="10dip"
+  	android:paddingTop="5dip"
   	android:paddingBottom="5dip">
+
+  	<ImageView android:id="@+id/lock_indicator"
+  		android:src="@drawable/lock_channel"
+  		android:layout_width="wrap_content"
+  		android:layout_height="wrap_content"
+  		android:layout_centerVertical="true"/>
   	<TextView android:id="@+id/service_name"
   		android:layout_width="wrap_content"
   		android:layout_height="wrap_content"
+  		android:layout_toRightOf="@id/lock_indicator"
+  		android:layout_marginLeft="5dip"
   		android:textAppearance="?android:attr/textAppearanceLarge"
   		android:text="中央一台"/>
   	<TextView android:id="@+id/content_time"
   		android:layout_width="wrap_content"
   		android:layout_height="wrap_content"
+  		android:layout_toRightOf="@id/lock_indicator"
+  		android:layout_marginLeft="5dip"
   		android:layout_below="@id/service_name"
   		android:text="12:00-12:30"/>
   	<TextView android:id="@+id/content_name"
@@ -36,12 +47,7 @@
   		android:layout_width="wrap_content"
   		android:layout_height="wrap_content"
   		android:layout_alignParentRight="true"
-  		android:layout_alignTop="@+id/service_name"
+  		android:layout_centerVertical="true"
   		/>
-  	<ImageView android:id="@+id/lock_indicator"
-  		android:src="@drawable/lock_channel"
-  		android:layout_width="wrap_content"
-  		android:layout_height="wrap_content"
-  		android:layout_alignParentRight="true"
-  		android:layout_alignTop="@id/content_time"/>
+
 </RelativeLayout>

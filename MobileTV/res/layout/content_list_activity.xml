@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+节目单 
+ -->
+<LinearLayout
+  	xmlns:android="http://schemas.android.com/apk/res/android"
+  	android:layout_width="fill_parent"
+  	android:layout_height="fill_parent"
+  	android:orientation="vertical">
+  	<RelativeLayout android:id="@+id/title_bar"
+  		android:layout_height="@dimen/title_bar_height"
+  		android:layout_width="fill_parent"
+  		android:paddingLeft="@dimen/title_bar_padding_left">
+  		<TextView android:id="@+id/title_name"
+  			android:layout_width="wrap_content"
+  			android:layout_height="wrap_content"
+  			android:layout_centerVertical="true"
+  			android:textAppearance="?android:attr/textAppearanceLarge"
+  			android:text="节目单"/>
+  		<TextView android:id="@+id/content_date_chooser"
+  			android:layout_width="wrap_content"
+  			android:layout_height="wrap_content"
+  			android:layout_centerVertical="true"
+  			android:layout_alignParentRight="true"
+  			android:clickable="true"
+  			android:text="今天"/>
+  			
+  		<TextView android:id="@+id/content_date"
+  			android:layout_width="wrap_content"
+  			android:layout_height="wrap_content"
+  			android:layout_centerVertical="true"
+  			android:layout_toLeftOf="@id/content_date_chooser"
+  			android:text="2010-09-01"
+  			/>
+  	</RelativeLayout>
+  	
+  	<Gallery android:id="@+id/service_list"
+  		android:layout_height="@dimen/tab_bar_height"
+  		android:layout_width="fill_parent"
+  		android:spacing="1dip"/>
+  	<ListView android:id="@+id/content_list"
+  		android:layout_height="wrap_content"
+  		android:layout_width="fill_parent"/>
+</LinearLayout>

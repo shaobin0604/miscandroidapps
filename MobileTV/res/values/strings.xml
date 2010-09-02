@@ -2,4 +2,144 @@
 <resources>
     <string name="hello">Hello World</string>
     <string name="app_name">Mobile TV</string>
+    
+    <string name="content_preview_intro">
+    1.2  多处理器时代
+        1.2.1  对称多处理（ Symmetric Multi-Processor, a.k.a SMP）
+        1.2.2  非对称多处理（ ASymmetric Multi-Processor, a.k.a ASMP）
+        1.2.3  非统一内存访问（ a.k.a NUMA）
+
+    1.3  共享内存（Shared Memory）
+
+    1.4  CPU 缓存
+        1.4.1  缓存一致性（Cache coherence）
+        1.4.2  MESI协议（MESI protocol）
+
+    1.5  线程
+        1.5.1  起源（Source）
+        1.5.2  优势（Advantages）
+        1.5.3  类型（Types）
+        1.5.4  模型（Models）
+        1.5.5  实现（Implementations）
+        1.5.6  安全（Security）
+
+    1.6  内存模型  (Memory Model)
+        1.6.1  可见性（Visibility）
+        1.6.2  原子性（Atomicity）
+        1.6.3  顺序性（Order）
+    
+    1.7  互斥（ Mutual Exclusion）
+        1.7.1  阻塞同步（ Blocking Synchronization）
+        1.7.1.1 临界区（Critical Section）
+        1.7.1.2  锁（Lock）
+            1.7.1.2.1  类型（Types）
+            1.7.1.2.1.1  自旋锁（Spinning Lock）
+            1.7.1.2.1.2  标签锁（Ticket Lock）
+            1.7.1.2.1.3  偏向锁（Biased Lock）*
+            1.7.1.2.2   数据库锁（Database Lock）*
+                1.7.1.2.2.1   消极锁
+                1.7.1.2.2.2   乐观锁
+            1.7.1.2.3  问题（Problems)
+                1.7.1.2.3.1  活锁（Live Lock）
+                1.7.1.2.3.2  死锁（Dead Lock）
+                1.7.1.2.3.3  优先级倒置（Priority Inversion）
+                1.7.1.2.3.4  其他（Others）            
+
+        1.7.2 非阻塞同步（Non-Blocking Synchronization）
+            1.7.2.1  Wait-free算法
+                1.7.2.1.1  比较交换算法（Compare-And-Swap, a.k.a CAS）
+                1.7.2.1.2  连接加载/条件存储（Load-link/Store-conditional）
+            1.7.2.1.3  ABA问题
+            1.7.2.2  Lock-free
+            1.7.2.3  Obstruction-free
+
+        1.7.3  重进入（Reentrant）
+
+        1.7.4  监视器（Monitor）
+            1.7.4.1  等待和信号（Wait and Signal）
+            1.7.4.2  条件变量（Condition Variable）
+
+        1.7.5  信号灯（Semaphore）
+
+        1.7.6  双检查锁（Double-Checked Locking, a.k.a DCL）
+
+    1.8  内存栅栏（Memory Barrier/Fence)
+
+    1.9  一致性模型（Consistency Model）
+        1.9.1  原子一致性（ Atomic consistency）
+        1.9.2  连续一致性（Sequential  Consistency）
+        1.9.3  因果一致性（Causal Consistency）        
+        1.9.4  释放一致性（Release Consistency）        
+        1.9.5  最终一致性（Eventual Consistency）
+        1.9.6  Delta一致性（Delta Consistency）        
+        1.9.7  弱一致性（Weak Consistency）        
+        
+
+    1.10  并发控制（Concurrency Control）
+        1.10.1  软件事务存储（Software Transactional Memory,a.k.a STM）
+                 
+2.  Java 基础
+    2.1  Java同步原语
+        2.1.1  synchronized关键字
+        2.1.2  volatile 关键字
+        2.1.3  CAS操作-AtomicX
+
+    2.2  Java内存模型
+        2.2.1  可见性（Visibility）
+        2.2.2  原子性（Atomicity）
+        2.2.3  顺序性（Order）
+        2.2.4  Happens-Before
+
+    2.3  java.lang.Thread
+        2.3.1  状态（State）
+        2.3.2  启动-Thread.start方法
+        2.3.3  弃用Thread.stop, Thread.suspend 和 Thread.resume方法
+        2.3.4  终止Thread.interrupt和Thread.interrupted方法
+        2.3.5  Thread.join方法
+        2.3.6  Object.wait/notify方法
+        2.3.7  Thread.wait方法
+
+
+3.  Java并发框架
+    3.1J.U.C框架
+        3.1.1  同步
+            3.1.1.1  核心-AbstractQueuedSynchronizer
+            3.1.1.2  重进入锁-ReentrantLock
+            3.1.1.3  重进入读写锁-ReentrantReadWriteLock
+            3.1.1.4  条件变量-Condition
+            3.1.1.5  新通知/信号机制-LockSupport
+
+        3.1.2  限制
+            3.1.2.1  CountDownLatch
+            3.1.2.2  CyclicBarrier
+            3.1.2.3  信号灯（Semaphore）
+
+        3.1.3  原子操作  
+                  3.1.3.1  Atomic*类
+                  3.1.3.2  操作实现-sun.misc.Unsafe
+
+        3.1.4  线程安全集合
+                  3.1.4.1  CopyOnWriteArrayList和CopyOnWriteArraySet
+                  3.1.4.2  ConcurrentSkipListMap和ConcurrentSkipListSet
+                  3.1.4.3  ConcurrentHashMap
+                  3.1.4.4  ArrayBlockingQueue
+                  3.1.4.5  LinkedBlockingQueue和ArrayBlockingDueue
+                  3.1.4.5  PriorityBlockingQueue    
+
+        3.1.5  线程池
+                  3.1.5.1  Executor
+                  3.1.5.2  ThreadPoolExecutor
+                  3.1.5.3  Callable和Future
+                  3.1.5.4  ScheduledExecutorService
+                  3.1.5.5  Executors
+
+4. JVM并发实现 **
+    4.1  线程（Thread）实现
+    4.2  监视器（Monitor）实现
+    4.3  可见性实现
+    4.4  原子性实现
+    4.5  顺序性实现
+    4.6  其他
+
+    </string>
 </resources>

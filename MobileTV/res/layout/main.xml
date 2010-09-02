@@ -7,7 +7,7 @@
 	<RelativeLayout android:id="@+id/title_bar"
 		android:layout_width="fill_parent"
 		android:layout_height="@dimen/title_bar_height"
-		android:paddingLeft="10dip">
+		android:paddingLeft="@dimen/title_bar_padding_left">
 		<TextView android:id="@+id/title"
 			android:layout_height="wrap_content"
 			android:layout_width="wrap_content"
