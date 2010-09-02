@@ -8,6 +8,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.Gallery;
 import android.widget.TextView;
 
@@ -30,11 +31,18 @@ public class MainActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.main);
-		gallery = (Gallery) findViewById(R.id.gallery);
-		textAdapter = new TextAdapter(this);
-		gallery.setAdapter(textAdapter);
-		gallery.setSelection(initialPos());
+		
+		TabBar tabBar = new TabBar(this);
+		tabBar.addTab(new Button(this));
+		tabBar.addTab(new Button(this));
+		
+		setContentView(tabBar);
+		
+//		setContentView(R.layout.main);
+//		gallery = (Gallery) findViewById(R.id.gallery);
+//		textAdapter = new TextAdapter(this);
+//		gallery.setAdapter(textAdapter);
+//		gallery.setSelection(initialPos());
 	}
 
 	private int initialPos() {
