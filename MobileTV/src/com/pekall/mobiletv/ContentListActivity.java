@@ -4,8 +4,8 @@ import java.util.Arrays;
 import java.util.List;
 
 import android.app.Activity;
-import android.app.ListActivity;
 import android.content.Context;
+import android.content.pm.ServiceInfo;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -16,9 +16,9 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Gallery;
 import android.widget.ImageView;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemSelectedListener;
 
 public class ContentListActivity extends Activity {
@@ -29,6 +29,8 @@ public class ContentListActivity extends Activity {
 	
 	private TextView mDate;
 	private TextView mDateChooser;
+	
+	private int mClickedPos;
 
 	private static final String[] SERVICE_NAMES = {
 		"中央一台",
@@ -46,22 +48,34 @@ public class ContentListActivity extends Activity {
 		{"体育新闻", "足球之夜"},
 	};
 	
+	private OnItemClickListener mServiceItemClickListener = new OnItemClickListener() {
+
+		@Override
+		public void onItemClick(AdapterView<?> parent, View view, int position,
+				long id) {
+			ServiceItemAdapter serviceItemadapter = (ServiceItemAdapter)parent.getAdapter();
+			serviceItemadapter.setSelectedPosition(position);
+			
+			List<String> items = Arrays.asList(CONTENT_NAMES[position]);
+			
+			ContentItemAdapter contentItemadapter = (ContentItemAdapter)mContentList.getAdapter(); 
+			
+			if (contentItemadapter == null) {
+				contentItemadapter = new ContentItemAdapter(ContentListActivity.this, items);
+				mContentList.setAdapter(contentItemadapter);
+			} else {
+				contentItemadapter.setItems(items);
+				contentItemadapter.notifyDataSetChanged();
+			}
+		}
+		
+	};
+	
 	private OnItemSelectedListener mServiceItemSelectedListener = new OnItemSelectedListener() {
 
 		@Override
 		public void onItemSelected(AdapterView<?> parent, View view, int position,
 				long id) {
-			List<String> items = Arrays.asList(CONTENT_NAMES[position]);
-			
-			ContentItemAdapter adapter = (ContentItemAdapter)mContentList.getAdapter(); 
-			
-			if (adapter == null) {
-				adapter = new ContentItemAdapter(ContentListActivity.this, items);
-				mContentList.setAdapter(adapter);
-			} else {
-				adapter.setItems(items);
-				adapter.notifyDataSetChanged();
-			}
 		}
 
 		@Override
@@ -87,9 +101,10 @@ public class ContentListActivity extends Activity {
 		mServiceList = (Gallery) findViewById(R.id.service_list);
 		mContentList = (ListView) findViewById(R.id.content_list);
 		
-		TabBtnAdapter serviceAdapter = new TabBtnAdapter(this, Arrays.asList(SERVICE_NAMES));
+		ServiceItemAdapter serviceAdapter = new ServiceItemAdapter(this, Arrays.asList(SERVICE_NAMES));
 		mServiceList.setAdapter(serviceAdapter);
 		mServiceList.setOnItemSelectedListener(mServiceItemSelectedListener);
+		mServiceList.setOnItemClickListener(mServiceItemClickListener);
 	}
 	
 	private static class ContentItemAdapter extends BaseAdapter {
@@ -182,11 +197,18 @@ public class ContentListActivity extends Activity {
 		}
 	}
 	
-	private static class TabBtnAdapter extends BaseAdapter {
+	private static class ServiceItemAdapter extends BaseAdapter {
 		private Context mContext;
 		private List<String> mItems;
+		
+		private int mSelectedPosition;
+		
+		public void setSelectedPosition(int position) {
+			mSelectedPosition = position;
+			notifyDataSetChanged();
+		}
 
-		public TabBtnAdapter(Context context, List<String> items) {
+		public ServiceItemAdapter(Context context, List<String> items) {
 			mContext = context;
 			mItems = items;
 		}
@@ -216,7 +238,11 @@ public class ContentListActivity extends Activity {
 			
 			text.setLayoutParams(new Gallery.LayoutParams(102, 37));
 			text.setGravity(Gravity.CENTER);
-			text.setBackgroundResource(R.drawable.gallery_item_bg);
+			
+			if (position == mSelectedPosition)
+				text.setBackgroundResource(R.drawable.tab_button_select);
+			else
+				text.setBackgroundResource(R.drawable.tab_button_unselect);
 			return text;
 		}
 	}
