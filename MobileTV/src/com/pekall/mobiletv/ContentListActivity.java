@@ -212,6 +212,7 @@ public class ContentListActivity extends Activity {
 			}
 			
 			text.setText(mItems.get(position));
+			text.setTextColor(0xFFFFFFFF);
 			
 			text.setLayoutParams(new Gallery.LayoutParams(102, 37));
 			text.setGravity(Gravity.CENTER);

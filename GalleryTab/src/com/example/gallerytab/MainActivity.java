@@ -32,17 +32,11 @@ public class MainActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
-		TabBar tabBar = new TabBar(this);
-		tabBar.addTab(new Button(this));
-		tabBar.addTab(new Button(this));
-		
-		setContentView(tabBar);
-		
-//		setContentView(R.layout.main);
-//		gallery = (Gallery) findViewById(R.id.gallery);
-//		textAdapter = new TextAdapter(this);
-//		gallery.setAdapter(textAdapter);
-//		gallery.setSelection(initialPos());
+		setContentView(R.layout.main);
+		gallery = (Gallery) findViewById(R.id.gallery);
+		textAdapter = new TextAdapter(this);
+		gallery.setAdapter(textAdapter);
+		gallery.setSelection(initialPos());
 	}
 
 	private int initialPos() {

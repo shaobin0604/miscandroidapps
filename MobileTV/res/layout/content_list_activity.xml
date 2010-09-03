@@ -37,6 +37,7 @@
   	<Gallery android:id="@+id/service_list"
   		android:layout_height="@dimen/tab_bar_height"
   		android:layout_width="fill_parent"
+  		android:unselectedAlpha="1"
   		android:spacing="1dip"/>
   	<ListView android:id="@+id/content_list"
   		android:layout_height="wrap_content"
