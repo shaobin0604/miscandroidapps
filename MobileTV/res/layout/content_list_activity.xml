@@ -34,7 +34,7 @@
   			/>
   	</RelativeLayout>
   	
-  	<Gallery android:id="@+id/service_list"
+  	<Gallery android:id="@+id/service_gallery"
   		android:layout_height="@dimen/tab_bar_height"
   		android:layout_width="fill_parent"
   		android:unselectedAlpha="1"

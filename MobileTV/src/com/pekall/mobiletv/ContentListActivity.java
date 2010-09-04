@@ -5,7 +5,7 @@ import java.util.List;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.pm.ServiceInfo;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -24,7 +24,7 @@ import android.widget.AdapterView.OnItemSelectedListener;
 public class ContentListActivity extends Activity {
 	private static final String TAG = ContentListActivity.class.getSimpleName();
 	
-	private Gallery mServiceList;
+	private Gallery mServiceGallery;
 	private ListView mContentList;
 	
 	private TextView mDate;
@@ -53,20 +53,7 @@ public class ContentListActivity extends Activity {
 		@Override
 		public void onItemClick(AdapterView<?> parent, View view, int position,
 				long id) {
-			ServiceItemAdapter serviceItemadapter = (ServiceItemAdapter)parent.getAdapter();
-			serviceItemadapter.setSelectedPosition(position);
-			
-			List<String> items = Arrays.asList(CONTENT_NAMES[position]);
-			
-			ContentItemAdapter contentItemadapter = (ContentItemAdapter)mContentList.getAdapter(); 
-			
-			if (contentItemadapter == null) {
-				contentItemadapter = new ContentItemAdapter(ContentListActivity.this, items);
-				mContentList.setAdapter(contentItemadapter);
-			} else {
-				contentItemadapter.setItems(items);
-				contentItemadapter.notifyDataSetChanged();
-			}
+			selectService(position);
 		}
 		
 	};
@@ -91,22 +78,40 @@ public class ContentListActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		
 		setContentView(R.layout.content_list_activity);
 		
 		mDate = (TextView) findViewById(R.id.content_date);
 		mDateChooser = (TextView) findViewById(R.id.content_date_chooser);
 		
-		mServiceList = (Gallery) findViewById(R.id.service_list);
+		mServiceGallery = (Gallery) findViewById(R.id.service_gallery);
 		mContentList = (ListView) findViewById(R.id.content_list);
 		
 		ServiceItemAdapter serviceAdapter = new ServiceItemAdapter(this, Arrays.asList(SERVICE_NAMES));
-		mServiceList.setAdapter(serviceAdapter);
-		mServiceList.setOnItemSelectedListener(mServiceItemSelectedListener);
-		mServiceList.setOnItemClickListener(mServiceItemClickListener);
+		mServiceGallery.setAdapter(serviceAdapter);
+		mServiceGallery.setOnItemSelectedListener(mServiceItemSelectedListener);
+		mServiceGallery.setOnItemClickListener(mServiceItemClickListener);
+		
+		selectService(0);
 	}
 	
+	private void selectService(int position) {
+		ServiceItemAdapter serviceItemadapter = (ServiceItemAdapter) mServiceGallery.getAdapter(); 
+		serviceItemadapter.setSelectedPosition(position);
+		
+		List<String> items = Arrays.asList(CONTENT_NAMES[position]);
+		
+		ContentItemAdapter contentItemadapter = (ContentItemAdapter)mContentList.getAdapter(); 
+		
+		if (contentItemadapter == null) {
+			contentItemadapter = new ContentItemAdapter(ContentListActivity.this, items);
+			mContentList.setAdapter(contentItemadapter);
+		} else {
+			contentItemadapter.setItems(items);
+			contentItemadapter.notifyDataSetChanged();
+		}
+	}
+
 	private static class ContentItemAdapter extends BaseAdapter {
 		private Context mContext;
 		private List<String> mItems;
@@ -234,7 +239,7 @@ public class ContentListActivity extends Activity {
 			}
 			
 			text.setText(mItems.get(position));
-			text.setTextColor(0xFFFFFFFF);
+			text.setTextColor(Color.WHITE);
 			
 			text.setLayoutParams(new Gallery.LayoutParams(102, 37));
 			text.setGravity(Gravity.CENTER);

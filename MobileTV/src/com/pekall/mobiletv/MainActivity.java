@@ -1,24 +1,49 @@
 package com.pekall.mobiletv;
 
+import java.util.Arrays;
+
 import android.app.Activity;
-import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.Window;
-import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
 
+import com.pekall.mobiletv.adapter.MockContentItemAdapter;
+import com.pekall.mobiletv.adapter.MockServiceItemAdapter;
+
 public class MainActivity extends Activity {
 	private static final String TAG = MainActivity.class.getSimpleName();
 	
 	private static final int TAB_COUNT = 3;
+	
+	private String[] ALL_SERVICE_NAMES = {
+    		"中央一台",
+    		"中央二台",
+    		"中央三台",
+    		"中央四台",
+    		"中央五台",
+    		"中央六台",
+    		"中央七台",
+    		"中央八台",
+    		"中央九台",
+    		"中央十台",
+    };
+	
+	private String[] FAVORITE_SERVICE_NAMES = {
+    		"中央一台",
+    		"中央二台",
+    		"中央三台",
+    		"中央四台",
+    };
+	
+	private static final String[] REMIND_CONTENT_NAMES = {
+		"新闻联播",
+		"科技新闻",
+		"动物世界",
+		"黄金剧场",
+	};
 	
 	private TextView mTabServiceAll;
 	private TextView mTabServiceFavorite;
@@ -48,8 +73,6 @@ public class MainActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        
-        requestWindowFeature(Window.FEATURE_NO_TITLE); 
         
         setContentView(R.layout.main);
         
@@ -84,14 +107,14 @@ public class MainActivity extends Activity {
         mLists[1] = mListServiceFavorite;
         mLists[2] = mListContentRemind;
         
-        ListAdapter mockServiceAllAdapter = new MockServiceAllAdapter(this);
+        ListAdapter mockServiceAllAdapter = new MockServiceItemAdapter(this, Arrays.asList(ALL_SERVICE_NAMES));
         mListServiceAll.setAdapter(mockServiceAllAdapter);
         
-        ListAdapter mockServiceFavoriteAdapter = new MockServiceFavoriteAdapter(this);
+        ListAdapter mockServiceFavoriteAdapter = new MockServiceItemAdapter(this, Arrays.asList(FAVORITE_SERVICE_NAMES));
         mListServiceFavorite.setAdapter(mockServiceFavoriteAdapter);
         
-        ListAdapter mockContentRemindAdapter = new MockContentRemindAdapter(this);
-        mListContentRemind.setAdapter(mockContentRemindAdapter);
+        ListAdapter mockContentItemAdapter = new MockContentItemAdapter(this, Arrays.asList(REMIND_CONTENT_NAMES));
+        mListContentRemind.setAdapter(mockContentItemAdapter);
 	}
     
     private void selectTab(View tab) {
@@ -103,269 +126,5 @@ public class MainActivity extends Activity {
     			mTabs[i].setEnabled(true);
     		}
     	}
-    }
-    
-    private static class ServiceItemViewHolder {
-		private View root;
-		
-		private TextView serviceName;
-		private TextView contentName;
-		private TextView contentTime;
-		private ImageView lockIndicator;
-		private ImageView favoriteIndicator;
-		
-		public ServiceItemViewHolder(View root) {
-			super();
-			this.root = root;
-		}
-
-		public TextView getServiceName() {
-			if (serviceName == null)
-				serviceName = (TextView)root.findViewById(R.id.service_name);
-			return serviceName;
-		}
-
-		public TextView getContentName() {
-			if (contentName == null)
-				contentName = (TextView) root.findViewById(R.id.content_name);
-			return contentName;
-		}
-
-		public TextView getContentTime() {
-			if (contentTime == null)
-				contentTime = (TextView) root.findViewById(R.id.content_time);
-			return contentTime;
-		}
-
-		public ImageView getLockIndicator() {
-			if (lockIndicator == null)
-				lockIndicator = (ImageView) root.findViewById(R.id.lock_indicator);
-			return lockIndicator;
-		}
-		
-		public ImageView getFavoriteIndicator() {
-			if (favoriteIndicator == null)
-				favoriteIndicator = (ImageView) root.findViewById(R.id.favorite_indicator);
-			return favoriteIndicator;
-		}
-	}
-    
-    private static class ContentItemViewHolder {
-    	private View root;
-    	private TextView contentName;
-    	private TextView contentTime;
-    	private TextView contentDate;
-    	private TextView serviceName;
-    	private ImageView remindIndicator;
-    	
-		public ContentItemViewHolder(View root) {
-			super();
-			this.root = root;
-		}
-    	
-		public TextView getServiceName() {
-			if (serviceName == null)
-				serviceName = (TextView)root.findViewById(R.id.service_name);
-			return serviceName;
-		}
-
-		public TextView getContentName() {
-			if (contentName == null)
-				contentName = (TextView) root.findViewById(R.id.content_name);
-			return contentName;
-		}
-
-		public TextView getContentTime() {
-			if (contentTime == null)
-				contentTime = (TextView) root.findViewById(R.id.content_time);
-			return contentTime;
-		}
-
-		public TextView getContentDate() {
-			if (contentDate == null)
-				contentDate = (TextView) root.findViewById(R.id.content_date);
-			return contentDate;
-		}
-
-		public ImageView getStateIndicator() {
-			if (remindIndicator == null)
-				remindIndicator = (ImageView) root.findViewById(R.id.remind_indicator);
-			return remindIndicator;
-		}
-    }
-    
-    private static class MockServiceAllAdapter extends BaseAdapter {
-
-    	private Context mContext;
-    	private LayoutInflater mInflater;
-
-    	private String[] SERVICE_NAMES = {
-    		"中央一台",
-    		"中央二台",
-    		"中央三台",
-    		"中央四台",
-    		"中央五台",
-    		"中央六台",
-    		"中央七台",
-    		"中央八台",
-    		"中央九台",
-    		"中央十台",
-    	};
-    	
-		public MockServiceAllAdapter(Context context) {
-			super();
-			this.mContext = context;
-			this.mInflater = LayoutInflater.from(context);
-		}
-
-		@Override
-		public int getCount() {
-			// TODO Auto-generated method stub
-			return SERVICE_NAMES.length;
-		}
-
-		@Override
-		public Object getItem(int position) {
-			// TODO Auto-generated method stub
-			return SERVICE_NAMES[position];
-		}
-
-		@Override
-		public long getItemId(int position) {
-			// TODO Auto-generated method stub
-			return position;
-		}
-
-		@Override
-		public View getView(int position, View convertView, ViewGroup parent) {
-			View row = convertView;
-			ServiceItemViewHolder holder = null;
-			
-			if (convertView == null) {
-				row = mInflater.inflate(R.layout.service_item, null);
-				holder = new ServiceItemViewHolder(row);
-				row.setTag(holder);
-			} else {
-				holder = (ServiceItemViewHolder)convertView.getTag();
-			}
-			
-			holder.getServiceName().setText(SERVICE_NAMES[position]);
-			
-			return row;
-		}
-    }
-    
-    private static class MockServiceFavoriteAdapter extends BaseAdapter {
-    	private Context mContext;
-    	private LayoutInflater mInflater;
-
-    	private String[] SERVICE_NAMES = {
-    		"中央一台",
-    		"中央二台",
-    		"中央三台",
-    		"中央四台",
-    	};
-    	
-		public MockServiceFavoriteAdapter(Context context) {
-			super();
-			this.mContext = context;
-			this.mInflater = LayoutInflater.from(context);
-		}
-
-		@Override
-		public int getCount() {
-			// TODO Auto-generated method stub
-			return SERVICE_NAMES.length;
-		}
-
-		@Override
-		public Object getItem(int position) {
-			// TODO Auto-generated method stub
-			return SERVICE_NAMES[position];
-		}
-
-		@Override
-		public long getItemId(int position) {
-			// TODO Auto-generated method stub
-			return position;
-		}
-
-		@Override
-		public View getView(int position, View convertView, ViewGroup parent) {
-			View row = convertView;
-			ServiceItemViewHolder holder = null;
-			
-			if (convertView == null) {
-				row = mInflater.inflate(R.layout.service_item, null);
-				holder = new ServiceItemViewHolder(row);
-				row.setTag(holder);
-			} else {
-				holder = (ServiceItemViewHolder)convertView.getTag();
-			}
-			
-			holder.getServiceName().setText(SERVICE_NAMES[position]);
-			
-			return row;
-		}
-    }
-    
-    private static class MockContentRemindAdapter extends BaseAdapter {
-
-    	
-    	private static final String[] CONTENT_NAMES = {
-    		"新闻联播",
-    		"科技新闻",
-    		"动物世界",
-    		"黄金剧场",
-    	};
-    	
-    	private Context mContext;
-    	private LayoutInflater mInflater;
-    	
-    	
-
-		public MockContentRemindAdapter(Context context) {
-			super();
-			this.mContext = context;
-			this.mInflater = LayoutInflater.from(context);
-		}
-
-		@Override
-		public int getCount() {
-			// TODO Auto-generated method stub
-			return CONTENT_NAMES.length;
-		}
-
-		@Override
-		public Object getItem(int position) {
-			// TODO Auto-generated method stub
-			return CONTENT_NAMES[position];
-		}
-
-		@Override
-		public long getItemId(int position) {
-			// TODO Auto-generated method stub
-			return position;
-		}
-
-		@Override
-		public View getView(int position, View convertView, ViewGroup parent) {
-			// TODO Auto-generated method stub
-			View row = convertView;
-			ContentItemViewHolder holder = null;
-			
-			if (convertView == null) {
-				row = mInflater.inflate(R.layout.content_item, null);
-				holder = new ContentItemViewHolder(row);
-				row.setTag(holder);
-			} else {
-				holder = (ContentItemViewHolder)convertView.getTag();
-			}
-			
-			holder.getContentName().setText(CONTENT_NAMES[position]);
-			
-			return row;
-		}
-    	
     }
 }
