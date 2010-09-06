@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="com.example.tabbar.TabBar">
+    <declare-styleable name="TabBar">
         <attr name="textColor" format="color"/>
         <attr name="textSize" format="dimension"/>
         <attr name="tabWidth" format="dimension"/>
@@ -8,7 +8,8 @@
         <attr name="tabSpacing" format="dimension"/>
         <attr name="tabDrawable" format="reference"/>
         <attr name="tabTopDrawable" format="reference"/>
-        <attr name="tabTopPadding" format="dimension"/>
+        <attr name="tabTopPaddingLR" format="dimension"/>
         <attr name="tabBottomDrawable" format="reference"/>
+        <attr name="tabBottomHeight" format="dimension"/>
     </declare-styleable>
 </resources>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+播放器主界面
+ -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+  	android:layout_width="fill_parent"
+  	android:layout_height="fill_parent">
+  	<include layout="@layout/title" android:id="@+id/title_bar"/>
+	
+	<RelativeLayout 
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_weight="1.0">
+	<ViewSwitcher android:id="@+id/main_content"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_centerVertical="true">
+		<RelativeLayout android:id="@+id/loading_screen"
+			android:layout_width="fill_parent"
+			android:layout_height="240dip"
+			android:background="@drawable/cmmb">
+			<TextView android:id="@+id/service_name"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerInParent="true"
+				android:text="CCTV-新闻"/>
+			<ProgressBar android:id="@+id/progress_bar" 
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerHorizontal="true"
+				android:layout_above="@id/service_name"/>
+			<TextView android:id="@+id/loading_tips"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerHorizontal="true"
+				android:layout_below="@id/service_name"
+				android:text="正在载入频道，请稍候..."/>
+		</RelativeLayout>
+		
+		<SurfaceView android:id="@+id/player_screen"
+			android:layout_width="fill_parent"
+			android:layout_height="240dip"/>
+	</ViewSwitcher>
+	</RelativeLayout>
+	
+	<Gallery android:id="@+id/service_gallery"
+  		android:layout_height="@dimen/tab_bar_height"
+  		android:layout_width="fill_parent"
+  		android:unselectedAlpha="1"
+  		android:spacing="1dip"/>
+	
+	<RelativeLayout android:id="@+id/tool_bar"
+		android:layout_width="fill_parent"
+		android:layout_height="93dip"
+		android:background="@drawable/cmcc_mobiletv_tool_bg_1">
+		<LinearLayout android:id="@+id/btn_group"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+			android:layout_centerInParent="true">
+			<ImageButton android:id="@+id/prev_service"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:src="@drawable/cmcc_mobiletv_back"/>
+			<ImageButton android:id="@+id/play_stop"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:src="@drawable/cmcc_mobiletv_play"/>
+			<ImageButton android:id="@+id/next_service"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:src="@drawable/cmcc_mobiletv_next"/>
+			<ImageButton android:id="@+id/capture"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:src="@drawable/cmcc_mobiletv_shoot"/>	
+		</LinearLayout>	
+	</RelativeLayout>
+</LinearLayout>

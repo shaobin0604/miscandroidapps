@@ -1,4 +1,4 @@
-package com.example.tabbar;
+package com.pekall.mobiletv.ui;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,16 +24,21 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.pekall.mobiletv.R;
+
 public class TabBar extends LinearLayout implements OnClickListener {
 	private static final int TAB_BOTTOM_RES = R.color.tab_bar_seperator;
+	private static final int TAB_BOTTOM_HEIGHT = 0;
+	
 	private static final int TAB_TOP_RES = 0;
-	private static final int TAB_BUTTON_RES = R.drawable.tab_btn;
+	private static final int TAB_BUTTON_RES = R.drawable.tab_button;
 	private static final int TEXT_SIZE = 14;
 	private static final int TEXT_COLOR = Color.WHITE;
 	private static final int TAB_HEIGHT = 40;
 	private static final int TAB_WIDTH = 100;
-	private static final int TAB_SPACING = 1;
-	private static final int TAB_TOP_PADDING = 1;
+	private static final int TAB_SPACING = 0;
+	private static final int TAB_TOP_PADDING_LR = 0;
+	
 	
 	
 	private static final String TAG = TabBar.class.getSimpleName();
@@ -59,7 +64,8 @@ public class TabBar extends LinearLayout implements OnClickListener {
 	private int mTabWidth = TAB_WIDTH;
 	private int mTabHeight = TAB_HEIGHT;
 	private int mTabSpacing = TAB_SPACING;
-	private int mTabTopPadding = TAB_TOP_PADDING;
+	private int mTabTopPaddingLR = TAB_TOP_PADDING_LR;
+	private int mTabBottomHeight = TAB_BOTTOM_HEIGHT;
 	
 	private int mTabDrawable = TAB_BUTTON_RES;
 	private int mTabTopDrawable = TAB_TOP_RES;
@@ -116,19 +122,20 @@ public class TabBar extends LinearLayout implements OnClickListener {
 
 	private void setupLayoutParams(Context context, AttributeSet attrs) {
 		TypedArray params = context.obtainStyledAttributes(attrs,
-				R.styleable.com_example_tabbar_TabBar);
+				R.styleable.TabBar);
 		
-		mTextColor = params.getColor(R.styleable.com_example_tabbar_TabBar_textColor, TEXT_COLOR);
-		mTextSize = (int) params.getDimension(R.styleable.com_example_tabbar_TabBar_textSize, TEXT_SIZE);
+		mTextColor = params.getColor(R.styleable.TabBar_textColor, TEXT_COLOR);
+		mTextSize = (int) params.getDimension(R.styleable.TabBar_textSize, TEXT_SIZE);
 		
-		mTabWidth = (int) params.getDimension(R.styleable.com_example_tabbar_TabBar_tabWidth, TAB_WIDTH);
-		mTabHeight = (int) params.getDimension(R.styleable.com_example_tabbar_TabBar_tabHeight, TAB_HEIGHT);
-		mTabSpacing = (int) params.getDimension(R.styleable.com_example_tabbar_TabBar_tabSpacing, TAB_SPACING);
+		mTabWidth = (int) params.getDimension(R.styleable.TabBar_tabWidth, TAB_WIDTH);
+		mTabHeight = (int) params.getDimension(R.styleable.TabBar_tabHeight, TAB_HEIGHT);
+		mTabSpacing = (int) params.getDimension(R.styleable.TabBar_tabSpacing, TAB_SPACING);
 		
-		mTabDrawable = params.getResourceId(R.styleable.com_example_tabbar_TabBar_tabDrawable, TAB_BUTTON_RES);
-		mTabTopDrawable = params.getResourceId(R.styleable.com_example_tabbar_TabBar_tabTopDrawable, TAB_TOP_RES);
-		mTabBottomDrawable = params.getResourceId(R.styleable.com_example_tabbar_TabBar_tabBottomDrawable, TAB_BOTTOM_RES);
-		mTabTopPadding = (int) params.getDimension(R.styleable.com_example_tabbar_TabBar_tabTopPadding, TAB_TOP_PADDING);
+		mTabDrawable = params.getResourceId(R.styleable.TabBar_tabDrawable, TAB_BUTTON_RES);
+		mTabTopDrawable = params.getResourceId(R.styleable.TabBar_tabTopDrawable, TAB_TOP_RES);
+		mTabBottomDrawable = params.getResourceId(R.styleable.TabBar_tabBottomDrawable, TAB_BOTTOM_RES);
+		mTabTopPaddingLR = (int) params.getDimension(R.styleable.TabBar_tabTopPaddingLR, TAB_TOP_PADDING_LR);
+		mTabBottomHeight = (int) params.getDimension(R.styleable.TabBar_tabBottomHeight, TAB_BOTTOM_HEIGHT);
 		
 		params.recycle();
 	}
@@ -227,12 +234,12 @@ public class TabBar extends LinearLayout implements OnClickListener {
 		setOrientation(LinearLayout.VERTICAL);
 		
 		mTabTop = new LinearLayout(mContext);
-		mTabTop.setPadding(mTabTopPadding, 0, mTabTopPadding, 0);
+		mTabTop.setPadding(mTabTopPaddingLR, 0, mTabTopPaddingLR, 0);
 		addView(mTabTop, LinearLayout.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
 		
 		mTabBottom = new View(mContext);
 		mTabBottom.setBackgroundResource(mTabBottomDrawable);
-		addView(mTabBottom, LinearLayout.LayoutParams.FILL_PARENT, 2);
+		addView(mTabBottom, LinearLayout.LayoutParams.FILL_PARENT, mTabBottomHeight);
 		
 //		setBackgroundResource(R.drawable.tab_btn_unselect);
 //		mLeft = new ImageView(mContext);

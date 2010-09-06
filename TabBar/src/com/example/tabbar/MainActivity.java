@@ -18,7 +18,7 @@ public class MainActivity extends Activity {
 		
 		TabBar tabBar = (TabBar) findViewById(R.id.tabbar);
 		
-		tabBar.addTab(new TabBar.TabSpec("AAA", getResources().getDrawable(R.drawable.cmcc_tab_channellist_selected)));
+		tabBar.addTab(new TabBar.TabSpec("AAA", null));
 		tabBar.addTab(new TabBar.TabSpec("BBB", null));
 		tabBar.addTab(new TabBar.TabSpec("CCC", null));
 		tabBar.addTab(new TabBar.TabSpec("DDD", null));
@@ -30,6 +30,18 @@ public class MainActivity extends Activity {
 		tabBar.addTab(new TabBar.TabSpec("JJJ", null));
 		tabBar.addTab(new TabBar.TabSpec("KKK", null));
 		tabBar.addTab(new TabBar.TabSpec("LLL", null));
+		tabBar.addTab(new TabBar.TabSpec("MMM", null));
+		tabBar.addTab(new TabBar.TabSpec("NNN", null));
+		tabBar.addTab(new TabBar.TabSpec("OOO", null));
+		tabBar.addTab(new TabBar.TabSpec("PPP", null));
+		tabBar.addTab(new TabBar.TabSpec("QQQ", null));
+		tabBar.addTab(new TabBar.TabSpec("RRR", null));
+		tabBar.addTab(new TabBar.TabSpec("SSS", null));
+		tabBar.addTab(new TabBar.TabSpec("TTT", null));
+		tabBar.addTab(new TabBar.TabSpec("UUU", null));
+		tabBar.addTab(new TabBar.TabSpec("VVV", null));
+		tabBar.addTab(new TabBar.TabSpec("WWW", null));
+		tabBar.addTab(new TabBar.TabSpec("XXX", null));
 		
 		tabBar.pack();
 		
