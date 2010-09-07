@@ -40,7 +40,13 @@
             </intent-filter>
         </activity>
         <activity android:label=".PurchaseDataActivity" android:name=".PurchaseDataActivity">
-         <intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:label=".SettingsActivity" android:name=".SettingsActivity">
+        	<intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>

@@ -3,6 +3,19 @@
     <string name="hello">Hello World</string>
     <string name="app_name">Mobile TV</string>
     
+    
+    <string name="prefs_title_remind_time">Remind time</string>
+    <string name="prefs_key_remind_time">prefs_key_remind_time</string>
+    <string name="prefs_default_remind_time">1</string>
+    
+    <string name="prefs_category_title_network">Network settings</string>
+    <string name="prefs_title_wap_gateway">WAP gateway address</string>
+    <string name="prefs_key_wap_gateway">prefs_key_wap_gateway</string>
+    <string name="prefs_title_sg">SG address</string>
+    <string name="prefs_key_sg">prefs_key_sg</string>
+    <string name="prefs_title_apn">APN</string>
+    <string name="prefs_key_apn">prefs_key_apn</string>
+    
     <string name="content_preview_intro">
     1.2  多处理器时代
         1.2.1  对称多处理（ Symmetric Multi-Processor, a.k.a SMP）

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+	<ListPreference android:title="@string/prefs_title_remind_time"
+		android:key="@string/prefs_key_remind_time"
+		android:dialogTitle="@string/prefs_title_remind_time"
+		android:entries="@array/prefs_remind_time_names"
+		android:entryValues="@array/prefs_remind_time_values"
+		android:defaultValue="@string/prefs_default_remind_time"
+		/>
+	<PreferenceCategory android:title="@string/prefs_category_title_network">
+		<Preference android:title="@string/prefs_title_apn"
+			android:key="@string/prefs_key_apn"/>
+		<Preference android:title="@string/prefs_title_wap_gateway"
+			android:key="@string/prefs_key_wap_gateway"/>
+		<Preference android:title="@string/prefs_title_sg"
+			android:key="@string/prefs_key_sg"/>
+	</PreferenceCategory>	
+</PreferenceScreen>
