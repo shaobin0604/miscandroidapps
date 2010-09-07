@@ -27,7 +27,7 @@ import android.widget.TextView;
 public class TabBar extends LinearLayout implements OnClickListener {
 	private static final int TAB_BOTTOM_RES = R.color.tab_bar_seperator;
 	private static final int TAB_TOP_RES = 0;
-	private static final int TAB_BUTTON_RES = R.drawable.tab_btn;
+	private static final int TAB_BUTTON_RES = R.drawable.tab_indicator;
 	private static final int TEXT_SIZE = 14;
 	private static final int TEXT_COLOR = Color.WHITE;
 	private static final int TAB_HEIGHT = 40;
@@ -201,14 +201,14 @@ public class TabBar extends LinearLayout implements OnClickListener {
 				mScroll.smoothScrollTo(newPosX, posY);
 				Log.d(TAG, "click new pos -- " + newPosX);
 				
-				btn.setEnabled(false);
+				btn.setSelected(true);
 				
 				mCurrentTabIndex = i;
 				
 				if (mOnTabSelectedListener != null)
 					mOnTabSelectedListener.onTabSelected(i);
 			} else {
-				btn.setEnabled(true);
+				btn.setSelected(false);
 			}
 		}
 	}
