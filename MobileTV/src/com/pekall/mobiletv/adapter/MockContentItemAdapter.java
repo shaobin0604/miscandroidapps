@@ -22,15 +22,15 @@ public class MockContentItemAdapter extends BaseAdapter {
 		super();
 		this.mContext = context;
 		this.mInflater = LayoutInflater.from(context);
+		
+		if (items == null)
+			items = Collections.emptyList();
 		this.mItems = items;
 	}
 
 	
 	public MockContentItemAdapter(Context context) {
-		super();
-		this.mContext = context;
-		this.mInflater = LayoutInflater.from(context);
-		this.mItems = Collections.emptyList();
+		this(context, null);
 	}
 
 	public void setItems(List<String> items) {
