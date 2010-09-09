@@ -1,18 +1,18 @@
 package com.pekall.mobiletv.adapter;
 
-import com.pekall.mobiletv.R;
-
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.pekall.mobiletv.R;
 
 public class PurchaseItemViewHolder {
 	private View root;
 	private TextView title;
 	private TextView notice;
-	private TextView services;
-	private TextView period;
-	private TextView price;
-	private TextView description;
+	private TextView detail;
+	private TextView subscribeStateText;
+	private ImageView subscribeStateImage;
 	
 	public PurchaseItemViewHolder(View root) {
 		this.root = root;
@@ -30,28 +30,23 @@ public class PurchaseItemViewHolder {
 		return notice;
 	}
 
-	public TextView getServices() {
-		if (services == null)
-			services = (TextView) root.findViewById(R.id.service_list);
-		return services;
+
+	public TextView getDetail() {
+		if (detail == null)
+			detail = (TextView) root.findViewById(R.id.purchase_item_detail);
+		return detail;
 	}
 
-	public TextView getPeriod() {
-		if (period == null)
-			period = (TextView) root.findViewById(R.id.subscribe_period);
-		return period;
+	public TextView getSubscribeStateText() {
+		if (subscribeStateText == null)
+			subscribeStateText = (TextView) root.findViewById(R.id.subscribe_state_text);
+		return subscribeStateText;
 	}
 
-	public TextView getPrice() {
-		if (price == null)
-			price = (TextView) root.findViewById(R.id.price);
-		return price;
-	}
-
-	public TextView getDescription() {
-		if (description == null)
-			description = (TextView) root.findViewById(R.id.description);
-		return description;
+	public ImageView getSubscribeStateImage() {
+		if (subscribeStateImage == null) 
+			subscribeStateImage = (ImageView) root.findViewById(R.id.subscribe_state_indicator);
+		return subscribeStateImage;
 	}
 	
 	

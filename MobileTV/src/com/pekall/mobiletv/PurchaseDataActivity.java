@@ -10,7 +10,7 @@ import android.widget.ViewFlipper;
 
 import com.pekall.mobiletv.adapter.MockPurchaseItemAdapter;
 import com.pekall.mobiletv.ui.TabBar;
-import com.pekall.mobiletv.ui.TabBar.OnTabSelectedListener;
+import com.pekall.mobiletv.ui.TabBar.OnTabChangeListener;
 import com.pekall.mobiletv.ui.TabBar.TabSpec;
 
 public class PurchaseDataActivity extends Activity {
@@ -25,20 +25,17 @@ public class PurchaseDataActivity extends Activity {
 	
 	
 	private static final String[] ORDERED_PURCHASE_ITEMS = {
-		"本地套餐一",
-		"本地套餐二",
-		"异地套餐一",
+		"手机电视全网套餐1",
 	};
 	
-	private static final String[] UNORDERED_PURCHASE_ITEMS = {
-		"本地套餐三",
-		"本地套餐四",
+	private static final String[] LOCAL_PURCHASE_ITEMS = {
+		"手机电视全网套餐1",
 	};
 	
-	private OnTabSelectedListener mTabSelectedListener = new OnTabSelectedListener() {
+	private OnTabChangeListener mTabSelectedListener = new OnTabChangeListener() {
 		
 		@Override
-		public void onTabSelected(int index) {
+		public void onTabChanged(int index) {
 			mFlipper.setDisplayedChild(index);
 		}
 	};
@@ -59,7 +56,7 @@ public class PurchaseDataActivity extends Activity {
 		mOrderedPurchaseDataList.setAdapter(orderedAdapter);
 		
 		mUnorderedPurchaseDataList = (ListView) findViewById(R.id.unordered_purchase_data_list);
-		MockPurchaseItemAdapter unorderedAdapter = new MockPurchaseItemAdapter(this, Arrays.asList(UNORDERED_PURCHASE_ITEMS));
+		MockPurchaseItemAdapter unorderedAdapter = new MockPurchaseItemAdapter(this, Arrays.asList(LOCAL_PURCHASE_ITEMS));
 		mUnorderedPurchaseDataList.setAdapter(unorderedAdapter);
 		
 		
@@ -67,9 +64,10 @@ public class PurchaseDataActivity extends Activity {
 		
 		mTabBar = (TabBar) findViewById(R.id.tab_bar);
 		mTabBar.addTab(new TabSpec("已订购套餐", null));
-		mTabBar.addTab(new TabSpec("未订购套餐", null));
+		mTabBar.addTab(new TabSpec("本地套餐", null));
 		mTabBar.pack();
 		
-		mTabBar.setOnTabSelectedListener(mTabSelectedListener);
+		mTabBar.setOnTabChangeListener(mTabSelectedListener);
+		mTabBar.setCurrentTab(0);
 	}
 }

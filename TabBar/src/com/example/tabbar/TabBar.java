@@ -116,19 +116,19 @@ public class TabBar extends LinearLayout implements OnClickListener {
 
 	private void setupLayoutParams(Context context, AttributeSet attrs) {
 		TypedArray params = context.obtainStyledAttributes(attrs,
-				R.styleable.com_example_tabbar_TabBar);
+				R.styleable.TabBar);
 		
-		mTextColor = params.getColor(R.styleable.com_example_tabbar_TabBar_textColor, TEXT_COLOR);
-		mTextSize = (int) params.getDimension(R.styleable.com_example_tabbar_TabBar_textSize, TEXT_SIZE);
+		mTextColor = params.getColor(R.styleable.TabBar_textColor, TEXT_COLOR);
+		mTextSize = (int) params.getDimension(R.styleable.TabBar_textSize, TEXT_SIZE);
 		
-		mTabWidth = (int) params.getDimension(R.styleable.com_example_tabbar_TabBar_tabWidth, TAB_WIDTH);
-		mTabHeight = (int) params.getDimension(R.styleable.com_example_tabbar_TabBar_tabHeight, TAB_HEIGHT);
-		mTabSpacing = (int) params.getDimension(R.styleable.com_example_tabbar_TabBar_tabSpacing, TAB_SPACING);
+		mTabWidth = (int) params.getDimension(R.styleable.TabBar_tabWidth, TAB_WIDTH);
+		mTabHeight = (int) params.getDimension(R.styleable.TabBar_tabHeight, TAB_HEIGHT);
+		mTabSpacing = (int) params.getDimension(R.styleable.TabBar_tabSpacing, TAB_SPACING);
 		
-		mTabDrawable = params.getResourceId(R.styleable.com_example_tabbar_TabBar_tabDrawable, TAB_BUTTON_RES);
-		mTabTopDrawable = params.getResourceId(R.styleable.com_example_tabbar_TabBar_tabTopDrawable, TAB_TOP_RES);
-		mTabBottomDrawable = params.getResourceId(R.styleable.com_example_tabbar_TabBar_tabBottomDrawable, TAB_BOTTOM_RES);
-		mTabTopPadding = (int) params.getDimension(R.styleable.com_example_tabbar_TabBar_tabTopPadding, TAB_TOP_PADDING);
+		mTabDrawable = params.getResourceId(R.styleable.TabBar_tabDrawable, TAB_BUTTON_RES);
+		mTabTopDrawable = params.getResourceId(R.styleable.TabBar_tabTopDrawable, TAB_TOP_RES);
+		mTabBottomDrawable = params.getResourceId(R.styleable.TabBar_tabBottomDrawable, TAB_BOTTOM_RES);
+		mTabTopPadding = (int) params.getDimension(R.styleable.TabBar_tabTopPadding, TAB_TOP_PADDING);
 		
 		params.recycle();
 	}

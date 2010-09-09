@@ -26,19 +26,38 @@ import android.widget.TextView;
 
 import com.pekall.mobiletv.R;
 
+
+/**
+ * TabBar view hierarchy
+ * 
+ * 
+ * +---------------------------------------------------------------+
+ * + LinearLayout +                                                +
+ * +              + HorizontalScrollView +                         +
+ * +              +                      + LinearLayout +          +
+ * +              +                      +              + TextView +
+ * +              +                      +              + TextView +
+ * +              +                      +              + TextView +
+ * +              +                      +              + ...      +
+ * +---------------------------------------------------------------+
+ * + LinearLayout                                                  +
+ * +---------------------------------------------------------------+
+ * 
+ * 
+ * @author shaobin
+ *
+ */
 public class TabBar extends LinearLayout implements OnClickListener {
-	private static final int TAB_BOTTOM_RES = R.color.tab_bar_seperator;
-	private static final int TAB_BOTTOM_HEIGHT = 0;
-	
-	private static final int TAB_TOP_RES = 0;
-	private static final int TAB_BUTTON_RES = R.drawable.tab_button;
+	private static final int TAB_SEPERATOR_RES = R.color.tab_bar_seperator;
+	private static final int TAB_BAR_RES = 0;
+	private static final int TAB_BUTTON_RES = R.drawable.tab_indicator;
 	private static final int TEXT_SIZE = 14;
 	private static final int TEXT_COLOR = Color.WHITE;
 	private static final int TAB_HEIGHT = 40;
 	private static final int TAB_WIDTH = 100;
 	private static final int TAB_SPACING = 0;
-	private static final int TAB_TOP_PADDING_LR = 0;
-	
+	private static final int TAB_HORIZONTAL_PADDING = 0;
+	private static final int TAB_SEPERATOR_HEIGHT = 0;
 	
 	
 	private static final String TAG = TabBar.class.getSimpleName();
@@ -50,8 +69,8 @@ public class TabBar extends LinearLayout implements OnClickListener {
 	private MyHorizontalScrollView mScroll;
 	private LinearLayout mTabHolder;
 	
-	private LinearLayout mTabTop;
-	private View mTabBottom;
+	private LinearLayout mTabBar;
+	private View mTabSeperator;
 	
 	private ImageView mLeft;
 	private ImageView mRight;
@@ -64,19 +83,19 @@ public class TabBar extends LinearLayout implements OnClickListener {
 	private int mTabWidth = TAB_WIDTH;
 	private int mTabHeight = TAB_HEIGHT;
 	private int mTabSpacing = TAB_SPACING;
-	private int mTabTopPaddingLR = TAB_TOP_PADDING_LR;
-	private int mTabBottomHeight = TAB_BOTTOM_HEIGHT;
+	private int mTabHorizontalPadding = TAB_HORIZONTAL_PADDING;
+	private int mTabSeperatorHeight = TAB_SEPERATOR_HEIGHT;
 	
-	private int mTabDrawable = TAB_BUTTON_RES;
-	private int mTabTopDrawable = TAB_TOP_RES;
-	private int mTabBottomDrawable = TAB_BOTTOM_RES;
+	private int mTabButtonDrawable = TAB_BUTTON_RES;
+	private int mTabBarDrawable = TAB_BAR_RES;
+	private int mTabSeperatorDrawable = TAB_SEPERATOR_RES;
 	
 	private int mTextColor = TEXT_COLOR;
 	private int mTextSize = TEXT_SIZE;
 	
 	
 	
-	private MyHorizontalScrollView.SizeChangedListener mSizeChangedListener = new MyHorizontalScrollView.SizeChangedListener() {
+	private MyHorizontalScrollView.OnSizeChangeListener mSizeChangedListener = new MyHorizontalScrollView.OnSizeChangeListener() {
 		
 		@Override
 		public void onSizeChanged(int w, int h, int oldw, int oldh) {
@@ -110,7 +129,7 @@ public class TabBar extends LinearLayout implements OnClickListener {
 		}
 	};
 	
-	private OnTabSelectedListener mOnTabSelectedListener;
+	private OnTabChangeListener mOnTabChangeListener;
 	
 
 	public TabBar(Context context, AttributeSet attrs) {
@@ -131,11 +150,11 @@ public class TabBar extends LinearLayout implements OnClickListener {
 		mTabHeight = (int) params.getDimension(R.styleable.TabBar_tabHeight, TAB_HEIGHT);
 		mTabSpacing = (int) params.getDimension(R.styleable.TabBar_tabSpacing, TAB_SPACING);
 		
-		mTabDrawable = params.getResourceId(R.styleable.TabBar_tabDrawable, TAB_BUTTON_RES);
-		mTabTopDrawable = params.getResourceId(R.styleable.TabBar_tabTopDrawable, TAB_TOP_RES);
-		mTabBottomDrawable = params.getResourceId(R.styleable.TabBar_tabBottomDrawable, TAB_BOTTOM_RES);
-		mTabTopPaddingLR = (int) params.getDimension(R.styleable.TabBar_tabTopPaddingLR, TAB_TOP_PADDING_LR);
-		mTabBottomHeight = (int) params.getDimension(R.styleable.TabBar_tabBottomHeight, TAB_BOTTOM_HEIGHT);
+		mTabButtonDrawable = params.getResourceId(R.styleable.TabBar_tabButtonDrawable, TAB_BUTTON_RES);
+		mTabBarDrawable = params.getResourceId(R.styleable.TabBar_tabBarDrawable, TAB_BAR_RES);
+		mTabSeperatorDrawable = params.getResourceId(R.styleable.TabBar_tabSeperatorDrawable, TAB_SEPERATOR_RES);
+		mTabHorizontalPadding = (int) params.getDimension(R.styleable.TabBar_tabHorizontalPadding, TAB_HORIZONTAL_PADDING);
+		mTabSeperatorHeight = (int) params.getDimension(R.styleable.TabBar_tabSeperatorHeight, TAB_SEPERATOR_HEIGHT);
 		
 		params.recycle();
 	}
@@ -161,11 +180,11 @@ public class TabBar extends LinearLayout implements OnClickListener {
 		mTabList.add(textView);
 	}
 	
-	public void setOnTabSelectedListener(OnTabSelectedListener l) {
+	public void setOnTabChangeListener(OnTabChangeListener l) {
 		if (!mPacked)
 			throw new IllegalStateException();
 		
-		mOnTabSelectedListener = l;
+		mOnTabChangeListener = l;
 	}
 	
 	public int getCurrentTab() {
@@ -208,14 +227,14 @@ public class TabBar extends LinearLayout implements OnClickListener {
 				mScroll.smoothScrollTo(newPosX, posY);
 				Log.d(TAG, "click new pos -- " + newPosX);
 				
-				btn.setEnabled(false);
+				btn.setSelected(true);
 				
 				mCurrentTabIndex = i;
 				
-				if (mOnTabSelectedListener != null)
-					mOnTabSelectedListener.onTabSelected(i);
+				if (mOnTabChangeListener != null)
+					mOnTabChangeListener.onTabChanged(i);
 			} else {
-				btn.setEnabled(true);
+				btn.setSelected(false);
 			}
 		}
 	}
@@ -233,13 +252,13 @@ public class TabBar extends LinearLayout implements OnClickListener {
 		
 		setOrientation(LinearLayout.VERTICAL);
 		
-		mTabTop = new LinearLayout(mContext);
-		mTabTop.setPadding(mTabTopPaddingLR, 0, mTabTopPaddingLR, 0);
-		addView(mTabTop, LinearLayout.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+		mTabBar = new LinearLayout(mContext);
+		mTabBar.setPadding(mTabHorizontalPadding, 0, mTabHorizontalPadding, 0);
+		addView(mTabBar, LinearLayout.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
 		
-		mTabBottom = new View(mContext);
-		mTabBottom.setBackgroundResource(mTabBottomDrawable);
-		addView(mTabBottom, LinearLayout.LayoutParams.FILL_PARENT, mTabBottomHeight);
+		mTabSeperator = new View(mContext);
+		mTabSeperator.setBackgroundResource(mTabSeperatorDrawable);
+		addView(mTabSeperator, LinearLayout.LayoutParams.FILL_PARENT, 2);
 		
 //		setBackgroundResource(R.drawable.tab_btn_unselect);
 //		mLeft = new ImageView(mContext);
@@ -254,7 +273,7 @@ public class TabBar extends LinearLayout implements OnClickListener {
 		
 		LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
 		params.weight = 1.0F;
-		mTabTop.addView(mScroll, params);
+		mTabBar.addView(mScroll, params);
 		
 //		mRight = new ImageView(mContext);
 //		mRight.setImageResource(R.drawable.arrow_right_btn);
@@ -269,7 +288,7 @@ public class TabBar extends LinearLayout implements OnClickListener {
 			TextView textView = mTabList.get(i);
 			textView.setTextSize(mTextSize);
 			textView.setTextColor(mTextColor);
-			textView.setBackgroundResource(mTabDrawable);
+			textView.setBackgroundResource(mTabButtonDrawable);
 			LinearLayout.LayoutParams tabLayoutParams = new LinearLayout.LayoutParams(mTabWidth, mTabHeight);
 			tabLayoutParams.setMargins(mTabSpacing, 0, mTabSpacing, 0);
 			mTabHolder.addView(textView, tabLayoutParams);
@@ -290,12 +309,12 @@ public class TabBar extends LinearLayout implements OnClickListener {
 		}
 	}
 	
-	public static interface OnTabSelectedListener {
-		public void onTabSelected(int index);
+	public static interface OnTabChangeListener {
+		public void onTabChanged(int index);
 	}
 	
 	private static class MyHorizontalScrollView extends HorizontalScrollView {
-		private SizeChangedListener mSizeChangedListener;
+		private OnSizeChangeListener mSizeChangeListener;
 		private FinalPostionListener mFinalPositionListener;
 		
 		private  Handler mPositionHandler = new Handler() {
@@ -422,18 +441,18 @@ public class TabBar extends LinearLayout implements OnClickListener {
 		protected void onSizeChanged(int w, int h, int oldw, int oldh) {
 			super.onSizeChanged(w, h, oldw, oldh);
 			
-			mSizeChangedListener.onSizeChanged(w, h, oldw, oldh);
+			mSizeChangeListener.onSizeChanged(w, h, oldw, oldh);
 		}
 		
-		public void setSizeChangedListener(SizeChangedListener l) {
-			mSizeChangedListener = l;
+		public void setSizeChangedListener(OnSizeChangeListener l) {
+			mSizeChangeListener = l;
 		}
 		
 		public void setFinalPositionListener(FinalPostionListener l) {
 			mFinalPositionListener = l;
 		}
 		
-		private static interface SizeChangedListener {
+		private static interface OnSizeChangeListener {
 			public void onSizeChanged(int w, int h, int oldw, int oldh);
 		}
 		

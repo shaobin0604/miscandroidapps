@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  	xmlns:android="http://schemas.android.com/apk/res/android"
+  	android:orientation="vertical"
+  	android:layout_width="fill_parent"
+  	android:layout_height="fill_parent">
+  
+  	<include layout="@layout/title"/>
+  	
+  	<ViewFlipper android:id="@+id/flipper"
+  		android:layout_width="fill_parent"
+  		android:layout_height="wrap_content">
+  	
+	  	<LinearLayout android:id="@+id/mbbms_service_unsubscribe"
+	  		android:layout_width="fill_parent"
+	  		android:layout_height="wrap_content"
+	  		android:orientation="vertical"
+	  		android:clickable="true"
+	  		android:background="@android:drawable/list_selector_background"
+	  		>
+	  		<TextView 
+	  			android:layout_width="wrap_content"
+	  			android:layout_height="wrap_content"
+	  			android:text="@string/mbbms_service_on"
+	  			android:textAppearance="?android:attr/textAppearanceMedium"
+	  			/>	
+	  		<TextView
+	  			android:layout_width="wrap_content"
+	  			android:layout_height="wrap_content"
+	  			android:layout_marginTop="10dip"
+	  			android:text="@string/mbbms_service_unsubscribe"
+	  			android:textAppearance="?android:attr/textAppearanceLarge"/>
+	  		<TextView
+	  			android:layout_width="wrap_content"
+	  			android:layout_height="wrap_content"
+	  			android:text="@string/mbbms_service_unsubscribe_tips"/>
+	  	</LinearLayout>
+  	
+  		<LinearLayout android:id="@+id/mbbms_service_subscribe"
+	  		android:layout_width="fill_parent"
+	  		android:layout_height="wrap_content"
+	  		android:orientation="vertical"
+	  		android:clickable="true"
+	  		android:background="@android:drawable/list_selector_background"
+	  		>
+	  		<TextView 
+	  			android:layout_width="wrap_content"
+	  			android:layout_height="wrap_content"
+	  			android:text="@string/mbbms_service_off"
+	  			android:textAppearance="?android:attr/textAppearanceMedium"/>	
+	  		<TextView
+	  			android:layout_width="wrap_content"
+	  			android:layout_height="wrap_content"
+	  			android:text="@string/mbbms_service_subscribe"
+	  			android:textAppearance="?android:attr/textAppearanceLarge"/>
+	  		<TextView
+	  			android:layout_width="wrap_content"
+	  			android:layout_height="wrap_content"
+	  			android:text="@string/mbbms_service_subscribe_tips"/>
+	  	</LinearLayout>
+  	</ViewFlipper>
+  	
+  	<View android:background="@android:drawable/divider_horizontal_dark"
+  		android:layout_width="fill_parent"
+  		android:layout_height="1dip"/>
+</LinearLayout>

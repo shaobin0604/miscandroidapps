@@ -6,10 +6,10 @@
         <attr name="tabWidth" format="dimension"/>
         <attr name="tabHeight" format="dimension"/>
         <attr name="tabSpacing" format="dimension"/>
-        <attr name="tabDrawable" format="reference"/>
-        <attr name="tabTopDrawable" format="reference"/>
-        <attr name="tabTopPaddingLR" format="dimension"/>
-        <attr name="tabBottomDrawable" format="reference"/>
-        <attr name="tabBottomHeight" format="dimension"/>
+        <attr name="tabButtonDrawable" format="reference"/>
+        <attr name="tabBarDrawable" format="reference"/>
+        <attr name="tabHorizontalPadding" format="dimension"/>
+        <attr name="tabSeperatorDrawable" format="reference"/>
+        <attr name="tabSeperatorHeight" format="dimension"/>
     </declare-styleable>
 </resources>

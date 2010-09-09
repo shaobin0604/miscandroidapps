@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  	xmlns:android="http://schemas.android.com/apk/res/android"
+  	android:orientation="vertical"
+  	android:layout_width="fill_parent"
+  	android:layout_height="fill_parent">
+  	
+  	<include android:id="@+id/title_bar" layout="@layout/title"/>
+  	
+  	<LinearLayout android:orientation="vertical"
+  		android:layout_width="fill_parent"
+  		android:layout_height="wrap_content"
+  		android:layout_weight="1.0">
+  	<LinearLayout android:orientation="horizontal"
+  		android:layout_height="wrap_content"
+  		android:layout_width="fill_parent">
+  		<ImageView android:id="@+id/subscribe_state_indicator"
+  			android:layout_width="wrap_content"
+  			android:layout_height="wrap_content"
+  			android:src="@drawable/cmcc_list_subscript"/>
+  		<TextView android:id="@+id/purchase_item_title"
+  			android:layout_width="wrap_content"
+  			android:layout_height="wrap_content"
+  			android:textAppearance="?android:attr/textAppearanceLarge"
+  			android:text="手机电视全网套餐1（已订购）"/>
+  	</LinearLayout>
+  	
+  	<TextView android:id="@+id/notice"
+  		android:layout_width="fill_parent"
+  		android:layout_height="wrap_content"
+  		android:text="该套餐无法在当前所在地观看"/>
+  	
+  	<TextView android:id="@+id/purchase_item_detail"
+  		android:layout_width="fill_parent"
+  		android:layout_height="wrap_content"
+  		android:text="该套餐包含下列频道:\n\n1.CCTV-1\n2.精彩电影\n\n订购时间：1个月\n资费6.00元/月"/>
+  	
+  	</LinearLayout>
+  	<LinearLayout android:orientation="horizontal"
+  		android:layout_height="wrap_content"
+  		android:layout_width="fill_parent"
+  		style="@android:style/ButtonBar">
+  		<Button android:id="@+id/btn_ok"
+  			android:layout_width="wrap_content"
+  			android:layout_height="wrap_content"
+  			android:layout_weight="0.5"
+  			android:text="订购"/>
+  		<Button android:id="@+id/btn_cancel"
+  			android:layout_width="wrap_content"
+  			android:layout_height="wrap_content"
+  			android:layout_weight="0.5"
+  			android:text="放弃"/>	
+  	</LinearLayout>
+</LinearLayout>

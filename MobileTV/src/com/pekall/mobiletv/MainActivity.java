@@ -3,20 +3,47 @@ package com.pekall.mobiletv;
 import java.util.Arrays;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.ViewFlipper;
 
 import com.pekall.mobiletv.adapter.MockContentItemAdapter;
 import com.pekall.mobiletv.adapter.MockServiceItemAdapter;
+import com.pekall.mobiletv.ui.TabBar;
+import com.pekall.mobiletv.ui.TabBar.TabSpec;
 
 public class MainActivity extends Activity {
 	private static final String TAG = MainActivity.class.getSimpleName();
 	
 	private static final int TAB_COUNT = 3;
+	
+	// 节目单
+	private static final int OPTIONS_MENU_CONTENT_LIST        = Menu.FIRST;
+	// 订购套餐管理
+	private static final int OPTIONS_MENU_PURCHASE_ITEM       = Menu.FIRST + 1;
+	// 业务管理
+	private static final int OPTIONS_MENU_MBBMS_SERVICE       = Menu.FIRST + 2;
+	// 搜索节目
+	private static final int OPTIONS_MENU_SEARCH              = Menu.FIRST + 3;
+	// 更新节目单
+	private static final int OPTIONS_MENU_UPDATE_SG           = Menu.FIRST + 4;
+	// 设置
+	private static final int OPTIONS_MENU_SETTINGS            = Menu.FIRST + 5;
+	// 帮助
+	private static final int OPTIONS_MENU_HELP                = Menu.FIRST + 6;
+	// 退出
+	private static final int OPTIONS_MENU_QUIT                = Menu.FIRST + 7;
+	
+	// 收藏频道
+	private static final int CONTEXT_MENU_ADD_TO_FAVORITE_SERVICE = Menu.FIRST;
+	// 取消收藏频道
+	private static final int CONTEXT_MENU_REMOVE_FROM_FAVORITE_SERVICE = Menu.FIRST + 1;
+	
+	
 	
 	private String[] ALL_SERVICE_NAMES = {
     		"中央一台",
@@ -45,11 +72,7 @@ public class MainActivity extends Activity {
 		"黄金剧场",
 	};
 	
-	private TextView mTabServiceAll;
-	private TextView mTabServiceFavorite;
-	private TextView mTabContentRemind;
-	
-	private TextView[] mTabs;
+	private TabBar mTabBar;
 	
 	private ViewFlipper mViewFlipper;
 	
@@ -57,13 +80,11 @@ public class MainActivity extends Activity {
 	private ListView mListServiceFavorite;
 	private ListView mListContentRemind;
 	
-	private ListView[] mLists;
-	
-	private View.OnClickListener mTabOnClickListener = new View.OnClickListener() {
+	private TabBar.OnTabChangeListener mOnTabChangeListener = new TabBar.OnTabChangeListener() {
 		
 		@Override
-		public void onClick(View v) {
-			selectTab(v);
+		public void onTabChanged(int index) {
+			mViewFlipper.setDisplayedChild(index);
 		}
 	};
 
@@ -74,38 +95,17 @@ public class MainActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         
-        setContentView(R.layout.main);
+        setContentView(R.layout.main_activity);
         
-        setupWidgets();
-        
-        selectTab(mTabServiceAll);
-        
+        setupWidgets();    
     }
 
 	private void setupWidgets() {
-		mTabServiceAll = (TextView) findViewById(R.id.tab_service_all);
-        mTabServiceFavorite = (TextView)findViewById(R.id.tab_service_favorite);
-        mTabContentRemind = (TextView)findViewById(R.id.tab_content_remind);
-        
-        mTabs = new TextView[TAB_COUNT];
-        mTabs[0] = mTabServiceAll;
-        mTabs[1] = mTabServiceFavorite;
-        mTabs[2] = mTabContentRemind;
-        
-        for (int i = 0; i < TAB_COUNT; i++) {
-        	mTabs[i].setOnClickListener(mTabOnClickListener);
-        }
-        
         mViewFlipper = (ViewFlipper) findViewById(R.id.view_flipper);
         
         mListServiceAll = (ListView) findViewById(R.id.list_service_all);
         mListServiceFavorite = (ListView) findViewById(R.id.list_service_favorite);
         mListContentRemind = (ListView) findViewById(R.id.list_content_remind);
-        
-        mLists = new ListView[TAB_COUNT];
-        mLists[0] = mListServiceAll;
-        mLists[1] = mListServiceFavorite;
-        mLists[2] = mListContentRemind;
         
         ListAdapter mockServiceAllAdapter = new MockServiceItemAdapter(this, Arrays.asList(ALL_SERVICE_NAMES));
         mListServiceAll.setAdapter(mockServiceAllAdapter);
@@ -115,16 +115,52 @@ public class MainActivity extends Activity {
         
         ListAdapter mockContentItemAdapter = new MockContentItemAdapter(this, Arrays.asList(REMIND_CONTENT_NAMES));
         mListContentRemind.setAdapter(mockContentItemAdapter);
+        
+        mTabBar = (TabBar) findViewById(R.id.tab_bar);
+		mTabBar.addTab(new TabSpec("全部频道", null));
+		mTabBar.addTab(new TabSpec("收藏频道", null));
+		mTabBar.addTab(new TabSpec("节目提醒", null));
+		mTabBar.pack();
+		
+		mTabBar.setOnTabChangeListener(mOnTabChangeListener);
+		mTabBar.setCurrentTab(0);
 	}
-    
-    private void selectTab(View tab) {
-    	for (int i = 0; i < TAB_COUNT; i++) {
-    		if (mTabs[i] == tab) {
-    			mTabs[i].setEnabled(false);
-    			mViewFlipper.setDisplayedChild(i);
-    		} else { 
-    			mTabs[i].setEnabled(true);
-    		}
-    	}
-    }
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		menu.add(Menu.NONE, OPTIONS_MENU_CONTENT_LIST, Menu.NONE, R.string.menu_content_list).setIntent(new Intent(this, ContentListActivity.class));
+		menu.add(Menu.NONE, OPTIONS_MENU_PURCHASE_ITEM, Menu.NONE, R.string.menu_purchase_item).setIntent(new Intent(this, PurchaseDataActivity.class));
+		menu.add(Menu.NONE, OPTIONS_MENU_MBBMS_SERVICE, Menu.NONE, R.string.menu_mbbms_service).setIntent(new Intent(this, MbbmsServiceActivity.class));
+		menu.add(Menu.NONE, OPTIONS_MENU_SEARCH, Menu.NONE, R.string.menu_search).setIntent(new Intent(this, SearchContentActivity.class));
+		menu.add(Menu.NONE, OPTIONS_MENU_UPDATE_SG, Menu.NONE, R.string.menu_update_content_list);
+		menu.add(Menu.NONE, OPTIONS_MENU_SETTINGS, Menu.NONE, R.string.menu_settings).setIntent(new Intent(this, SettingsActivity.class));
+		menu.add(Menu.NONE, OPTIONS_MENU_HELP, Menu.NONE, R.string.menu_help).setIntent(new Intent(this, HelpActivity.class));
+		menu.add(Menu.NONE, OPTIONS_MENU_QUIT, Menu.NONE, R.string.menu_quit);
+		return super.onCreateOptionsMenu(menu);
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case OPTIONS_MENU_QUIT:
+			handleQuit();
+			break;
+		case OPTIONS_MENU_UPDATE_SG:
+			handleUpdateSg();
+			break;
+		default:
+			break;
+		}
+		return super.onOptionsItemSelected(item);
+	}
+
+	private void handleUpdateSg() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void handleQuit() {
+		// TODO shutdown application gracefully
+		finish();
+	}
 }

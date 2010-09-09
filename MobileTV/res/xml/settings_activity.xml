@@ -10,9 +10,9 @@
 	<PreferenceCategory android:title="@string/prefs_category_title_network">
 		<Preference android:title="@string/prefs_title_apn"
 			android:key="@string/prefs_key_apn"/>
-		<Preference android:title="@string/prefs_title_wap_gateway"
+		<EditTextPreference android:title="@string/prefs_title_wap_gateway"
 			android:key="@string/prefs_key_wap_gateway"/>
-		<Preference android:title="@string/prefs_title_sg"
+		<EditTextPreference android:title="@string/prefs_title_sg"
 			android:key="@string/prefs_key_sg"/>
 	</PreferenceCategory>	
 </PreferenceScreen>

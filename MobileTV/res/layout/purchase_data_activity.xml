@@ -10,9 +10,11 @@
   	<com.pekall.mobiletv.ui.TabBar android:id="@+id/tab_bar"
   		android:layout_width="fill_parent"
   		android:layout_height="wrap_content"
-  		tv:tabWidth="160dip"
+  		tv:tabWidth="157dip"
   		tv:tabHeight="40dip"
-  		tv:tabDrawable="@drawable/tab_button"/>
+  		tv:tabSpacing="1dip"
+  		tv:tabHorizontalPadding="1dip"
+  		tv:tabButtonDrawable="@drawable/tab_indicator"/>
   	
   	<ViewFlipper android:id="@+id/flipper" 
   		android:layout_width="fill_parent"

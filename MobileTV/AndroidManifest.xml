@@ -9,44 +9,27 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:label=".ContentListActivity" android:name=".ContentListActivity">
+        <activity android:label=".ContentListActivity" android:name=".ContentListActivity"/>
+        <activity android:label=".ContentPreviewActivity" android:name=".ContentPreviewActivity"/>
+        <activity android:label=".PlayerActivity" android:name=".PlayerActivity"/>
+        <activity android:label=".SearchContentActivity" android:name=".SearchContentActivity"/>
+        <activity android:label=".SearchContentResultActivity" android:name=".SearchContentResultActivity"/>
+        <activity android:label=".PurchaseDataActivity" android:name=".PurchaseDataActivity"/>
+        <activity android:label=".SettingsActivity" android:name=".SettingsActivity"/>
+        <activity android:label=".PurchaseDataDetailActivity" android:name=".PurchaseDataDetailActivity"/>
+        <activity android:label="@string/SplashActivityActivityLabel" android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:label=".ContentPreviewActivity" android:name=".ContentPreviewActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
-        </activity>
-        <activity android:label=".PlayerActivity" android:name=".PlayerActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
-        </activity>
-        <activity android:label=".SearchContentActivity" android:name=".SearchContentActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
-        </activity>
-        <activity android:label=".SearchContentResultActivity" android:name=".SearchContentResultActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
-        </activity>
-        <activity android:label=".PurchaseDataActivity" android:name=".PurchaseDataActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
-        </activity>
-        <activity android:label=".SettingsActivity" android:name=".SettingsActivity">
-        	<intent-filter>
+        <activity android:label="@string/HelpActivityActivityLabel" android:name=".HelpActivity"/>
+        <activity
+            android:label="@string/MbbmsServiceActivityActivityLabel" android:name=".MbbmsServiceActivity"/>
+        <activity
+            android:label="@string/EmergencyBroadcastListActivityActivityLabel" android:name=".EmergencyBroadcastListActivity"/>
+        <activity android:name=".EmergencyBroadcastDetailActivity">
+        	 <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
