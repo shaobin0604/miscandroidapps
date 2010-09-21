@@ -1,21 +1,27 @@
 package com.example.gallerytab;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.Gallery;
 import android.widget.TextView;
+import android.widget.AdapterView.OnItemClickListener;
 
 public class MainActivity extends Activity {
 
 	private Gallery gallery;
-	private TextAdapter textAdapter;
+	private TabAdapter textAdapter;
 
 	private static final String[] PROGRAM_NAMES = { 
 		"中央一台",
@@ -31,44 +37,56 @@ public class MainActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
 		setContentView(R.layout.main);
+		
 		gallery = (Gallery) findViewById(R.id.gallery);
-		textAdapter = new TextAdapter(this);
+		textAdapter = new TabAdapter(this, Arrays.asList(PROGRAM_NAMES));
 		gallery.setAdapter(textAdapter);
-		gallery.setSelection(initialPos());
+		gallery.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view, int position,
+					long id) {
+				TabAdapter adapter = (TabAdapter)parent.getAdapter();
+				adapter.setSelectedPos(position);
+			}
+			
+		});
 	}
 
-	private int initialPos() {
-//		int start = Integer.MAX_VALUE / 2;
-//		
-//		for (int i = 0; i < PROGRAM_NAMES.length; i++) {
-//			start += i;
-//			if (start % PROGRAM_NAMES.length == 0)
-//				break;
-//		}
-//		
-//		return start;
-		return 0;
-	}
+	
 
-	public class TextAdapter extends BaseAdapter {
-		int mGalleryItemBackground;
+	public class TabAdapter extends BaseAdapter {
 		private Context mContext;
+		private List<String> mList;
+		private int mSelectedPos;
 
-		public TextAdapter(Context context) {
+		public TabAdapter(Context context, List<String> list) {
 			mContext = context;
-			TypedArray typedArray = obtainStyledAttributes(R.styleable.Gallery);
-			mGalleryItemBackground = R.drawable.gallery_item_background;
+			TypedArray a = obtainStyledAttributes(R.styleable.Gallery);
+			a.recycle();
+			if (list == null)
+				list = Collections.emptyList();
+			mList = list; 
+		}
+		
+		public void setSelectedPos(int pos) {
+			if (pos != mSelectedPos) {
+				mSelectedPos = pos;
+				notifyDataSetChanged();
+			}
+		}
+		
+		public int getSelectedPos() {
+			return mSelectedPos;
 		}
 
-		// 第1点改进，返回一个很大的值，例如，Integer.MAX_VALUE
 		public int getCount() {
-			return PROGRAM_NAMES.length;
+			return mList.size();
 		}
 
 		public Object getItem(int position) {
-			return position;
+			return mList.get(position);
 		}
 
 		public long getItemId(int position) {
@@ -82,16 +100,18 @@ public class MainActivity extends Activity {
 			} else {
 				text = (TextView) convertView;
 			}
-	
-			if (position < 0) {
-				position = position + PROGRAM_NAMES.length;
-			}
 			
-			text.setText(PROGRAM_NAMES[position % PROGRAM_NAMES.length]);
+			text.setTextColor(Color.WHITE);
+			text.setText(mList.get(position));
 			
-			text.setLayoutParams(new Gallery.LayoutParams(102, 37));
+			text.setLayoutParams(new Gallery.LayoutParams(102, 40));
 			text.setGravity(Gravity.CENTER);
-			text.setBackgroundResource(mGalleryItemBackground);
+			
+			if (position == mSelectedPos)
+				text.setBackgroundResource(R.drawable.tab_button_select);
+			else
+				text.setBackgroundResource(R.drawable.tab_button_unselect);
+			
 			return text;
 		}
 	}
