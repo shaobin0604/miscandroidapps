@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/hor_layout"
+	android:visibility="visible" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+	<RelativeLayout android:gravity="center"
+		android:background="@drawable/buttonbg_2"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:layout_alignParentTop="true">
+		<ImageView android:id="@+id/hor_signal" android:paddingLeft="15.0px"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:layout_alignParentLeft="true"
+			android:src="@drawable/tv_signal" />
+		<TextView android:id="@+id/hor_name" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:layout_centerInParent="true" />
+		<ImageButton android:id="@+id/hor_back" android:background="#00000000"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:src="@drawable/back_button_selector"
+			android:layout_alignParentRight="true" />
+	</RelativeLayout>
+	<LinearLayout android:gravity="center"
+		android:orientation="horizontal" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:layout_alignParentBottom="true"
+		android:layout_centerHorizontal="true">
+		<ImageButton android:id="@+id/hor_prev"
+			android:layout_width="54.0px" android:layout_height="56.0px"
+			android:src="@drawable/cmcc_mobiletv_back" />
+		<ImageButton android:id="@+id/hor_play_stop"
+			android:layout_width="54.0px" android:layout_height="56.0px"
+			android:src="@drawable/cmcc_mobiletv_play" />
+		<ImageButton android:id="@+id/hor_next"
+			android:layout_width="54.0px" android:layout_height="56.0px"
+			android:src="@drawable/cmcc_mobiletv_next" />
+		<ImageButton android:id="@+id/hor_record"
+			android:layout_width="54.0px" android:layout_height="56.0px"
+			android:src="@drawable/cmcc_mobiletv_record" />
+		<ImageButton android:id="@+id/hor_snap"
+			android:layout_width="54.0px" android:layout_height="56.0px"
+			android:src="@drawable/cmcc_mobiletv_shoot" />
+		<ImageButton android:id="@+id/zoom" android:layout_width="54.0px"
+			android:layout_height="56.0px" android:src="@drawable/zoom" />
+	</LinearLayout>
+</RelativeLayout>
