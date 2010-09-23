@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout android:background="#ff000000"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	xmlns:android="http://schemas.android.com/apk/res/android">
+	<LinearLayout android:gravity="center"
+		android:orientation="vertical" android:layout_width="fill_parent"
+		android:layout_height="fill_parent">
+		<RelativeLayout android:gravity="center" android:id="@+id/gallery_layout"
+			android:visibility="gone"
+			android:layout_width="fill_parent" android:layout_height="wrap_content">
+			<Gallery android:id="@+id/gallery" android:background="@drawable/cmcc_tab_bg"
+				android:layout_width="fill_parent" android:layout_height="38.0dip"
+				android:spacing="12.0dip"/>
+		</RelativeLayout>
+		
+		<RelativeLayout android:gravity="center" android:id="@+id/playback_layout"
+			android:layout_width="320.0dip" android:layout_height="240.0dip">
+			<SurfaceView android:id="@+id/surface_view"
+				android:visibility="visible" android:clickable="true"
+				android:layout_width="fill_parent" android:layout_height="fill_parent" />
+			<ImageView android:id="@+id/image_screen" 
+				android:background="@drawable/cmmb" android:visibility="gone"
+				android:layout_width="fill_parent" android:layout_height="fill_parent"
+				android:scaleType="center" android:adjustViewBounds="true" />
+			<LinearLayout android:gravity="top|right|center"
+				android:orientation="horizontal" android:layout_width="fill_parent"
+				android:layout_height="fill_parent">
+				<ImageView android:id="@+id/record_signal" android:padding="10.0dip"
+					android:visibility="gone" android:layout_width="wrap_content"
+					android:layout_height="wrap_content" android:src="@drawable/recording" />
+				<Chronometer android:textSize="17.0sp"
+					android:textColor="#ffff0000" android:id="@+id/play_chronometer"
+					android:padding="10.0px" android:visibility="gone"
+					android:layout_width="wrap_content" android:layout_height="wrap_content"
+					android:format="%s" />
+			</LinearLayout>
+			<TextView android:textSize="40.0sp" android:textColor="#ffff0000"
+				android:gravity="center" android:id="@+id/information1"
+				android:visibility="gone" android:layout_width="fill_parent"
+				android:layout_height="fill_parent"/>
+			<LinearLayout android:gravity="center"
+				android:orientation="vertical" android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerInParent="true">
+				<RelativeLayout android:gravity="center"
+					android:layout_width="40.0px" android:layout_height="40.0px">
+					<ProgressBar android:id="@+id/progress"
+						android:visibility="gone" android:layout_width="wrap_content"
+						android:layout_height="wrap_content" android:max="100"
+						android:layout_centerInParent="true" style="?android:progressBarStyleLarge" />
+					<TextView android:textSize="60.0px" android:textColor="#ff00ff00"
+						android:gravity="center" android:id="@+id/delay_go"
+						android:visibility="gone" android:layout_width="fill_parent"
+						android:layout_height="fill_parent" />
+				</RelativeLayout>
+				<TextView android:textColor="#ffffffff" android:gravity="center"
+					android:id="@+id/progress_message" android:visibility="gone"
+					android:layout_width="wrap_content" android:layout_height="wrap_content"
+					android:text="提示消息" android:shadowColor="#ff000000"
+					android:shadowDy="1.0" android:shadowRadius="1.0" />
+			</LinearLayout>
+			<TextView android:textSize="10.0sp" android:textColor="#ff2ec8e9"
+				android:gravity="top|right|center" android:id="@+id/number"
+				android:padding="10.0dip" android:visibility="gone"
+				android:layout_width="fill_parent" android:layout_height="fill_parent"
+				android:shadowColor="#ffffffff" android:shadowDy="1.0"
+				android:shadowRadius="1.0" />
+			<RelativeLayout android:id="@+id/hor_layout"
+				android:visibility="visible" android:layout_width="fill_parent"
+				android:layout_height="fill_parent">
+				<RelativeLayout android:gravity="center"
+					android:orientation="horizontal" android:background="@drawable/buttonbg_2"
+					android:layout_width="fill_parent" android:layout_height="wrap_content"
+					android:layout_alignParentTop="true">
+					<ImageView android:id="@+id/hor_signal"
+						android:paddingLeft="15.0px" android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_alignParentLeft="true"
+						android:layout_centerInParent="true" />
+					<TextView android:id="@+id/hor_name" android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerInParent="true" />
+					<ImageButton android:id="@+id/hor_back"
+						android:background="#00000000" android:layout_width="wrap_content"
+						android:layout_height="wrap_content" android:src="@drawable/back_button_selector"
+						android:layout_alignParentRight="true" />
+				</RelativeLayout>
+				<LinearLayout android:gravity="center"
+					android:orientation="horizontal" android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_alignParentBottom="true">
+					<ImageButton android:id="@+id/hor_prev"
+						android:layout_width="54.0px" android:layout_height="56.0px"
+						android:src="@drawable/cmcc_mobiletv_back" />
+					<ImageButton android:id="@+id/hor_play_stop"
+						android:layout_width="54.0px" android:layout_height="56.0px"
+						android:src="@drawable/cmcc_mobiletv_play" />
+					<ImageButton android:id="@+id/hor_next"
+						android:layout_width="54.0px" android:layout_height="56.0px"
+						android:src="@drawable/cmcc_mobiletv_next" />
+					<ImageButton android:id="@+id/hor_record"
+						android:layout_width="54.0px" android:layout_height="56.0px"
+						android:src="@drawable/cmcc_mobiletv_record" />
+					<ImageButton android:id="@+id/hor_snap"
+						android:layout_width="54.0px" android:layout_height="56.0px"
+						android:src="@drawable/cmcc_mobiletv_shoot" />
+					<ImageButton android:id="@+id/zoom"
+						android:layout_width="54.0px" android:layout_height="56.0px"
+						android:src="@drawable/zoom" />
+				</LinearLayout>
+			</RelativeLayout>
+		</RelativeLayout>
+		<LinearLayout android:gravity="fill" android:orientation="vertical"
+			android:layout_width="fill_parent" android:layout_height="wrap_content">
+			<TextView android:textSize="21.0sp" android:textColor="#ffffffff"
+				android:gravity="center" android:id="@+id/information"
+				android:visibility="visible" android:layout_width="fill_parent"
+				android:layout_height="46.0dip" />
+			<LinearLayout android:gravity="center" android:visibility="gone"
+				android:orientation="horizontal" android:id="@+id/portrait_control_layout"
+				android:background="@drawable/cmcc_mobiletv_tool_bg_1"
+				android:layout_width="fill_parent" android:layout_height="fill_parent">
+				<ImageButton android:id="@+id/prev" android:layout_width="54.0px"
+					android:layout_height="56.0px" android:src="@drawable/cmcc_mobiletv_back" />
+				<ImageButton android:id="@+id/play_stop"
+					android:layout_width="54.0px" android:layout_height="56.0px"
+					android:src="@drawable/cmcc_mobiletv_play" />
+				<ImageButton android:id="@+id/next" android:layout_width="54.0px"
+					android:layout_height="56.0px" android:src="@drawable/cmcc_mobiletv_next" />
+				<ImageButton android:id="@+id/record"
+					android:layout_width="54.0px" android:layout_height="56.0px"
+					android:src="@drawable/cmcc_mobiletv_record" />
+				<ImageButton android:id="@+id/snap" android:layout_width="54.0px"
+					android:layout_height="56.0px" android:src="@drawable/cmcc_mobiletv_shoot" />
+			</LinearLayout>
+		</LinearLayout>
+	</LinearLayout>
+	<Gallery android:id="@+id/big_gallery" android:background="@drawable/cmcc_tab_1_bg"
+		android:visibility="gone" android:layout_width="fill_parent"
+		android:layout_height="240.0px" android:spacing="12.0dip"
+		android:layout_weight="1.0" android:layout_centerInParent="true" />
+</RelativeLayout>
