@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<dimen name="title_bar_height">40dip</dimen>
+	<dimen name="tab_bar_height">30dip</dimen>
+	<dimen name="title_bar_padding_left">10dip</dimen>
+</resources>
