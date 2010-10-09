@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="greet_me">greet me</string>
+    <string name="hello">Hello World</string>
+    <string name="app_name">TestJNI</string>
+</resources>

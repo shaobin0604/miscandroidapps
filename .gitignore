@@ -1,3 +1,8 @@
 bin
 gen
-screenshot/Thumbs.db
+Thumbs.db
+*.swp
+*.bak
+*~
+*.jar
+*.tmp
