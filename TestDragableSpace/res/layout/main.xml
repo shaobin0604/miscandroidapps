@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.testdragablespace.DragableSpace
+	xmlns:app="http://schemas.android.com/apk/res/com.example.testdragablespace"
+	xmlns:android="http://schemas.android.com/apk/res/android" 
+	android:id="@+id/space"
+	android:layout_width="fill_parent" 
+	android:layout_height="fill_parent"
+	app:default_screen="1">
+	<include android:id="@+id/left" layout="@layout/left_screen" />
+	<include android:id="@+id/center" layout="@layout/initial_screen" />
+	<include android:id="@+id/right" layout="@layout/right_screen" />
+</com.example.testdragablespace.DragableSpace>
