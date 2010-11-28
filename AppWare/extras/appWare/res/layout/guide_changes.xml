@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/Header" layout="@layout/header_tutorial" />
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout style="@style/GuideLayout">
+                <TextView android:text="Change log" style="@style/GuideTitle" />
+                <TextView android:text="..." style="@style/GuideText" />
+                <TextView android:text="@string/terms_of_service" style="@style/GuideTerms" />
+            </LinearLayout>
+        </ScrollView>
+        <View style="@style/FooterShadow" />
+    </FrameLayout>
+    <LinearLayout android:gravity="center" android:id="@id/Buttons_Bar" android:background="@drawable/bar" android:layout_width="fill_parent" android:layout_height="@dimen/bar_height" android:layout_alignParentBottom="true">
+        <Button android:id="@id/Button_Bar_Home" android:text="@string/menu_home" android:drawableTop="@drawable/ic_home" style="@style/BarButton" />
+    </LinearLayout>
+</LinearLayout>

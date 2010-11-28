@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@id/mi_details" android:title="@string/menu_details" />
+    <item android:id="@id/mi_tags" android:title="@string/menu_tags" />
+    <item android:id="@id/mi_market" android:title="Open in Market" />
+    <item android:id="@id/mi_share" android:title="@string/menu_share" />
+    <item android:id="@id/mi_launch" android:title="Launch" />
+    <item android:id="@id/mi_uninstall" android:title="Uninstall" />
+</menu>

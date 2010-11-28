@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:icon="@android:drawable/ic_menu_view" android:id="@id/mi_filter" android:title="@string/menu_filter" />
+    <item android:icon="@drawable/ic_menu_view_profile" android:id="@id/mi_profile" android:title="@string/menu_profile" />
+    <item android:icon="@drawable/ic_menu_login" android:id="@id/mi_loginout" android:title="@string/menu_login" />
+    <item android:icon="@android:drawable/ic_menu_search" android:id="@id/mi_search" android:title="@string/menu_search" />
+    <item android:icon="@android:drawable/ic_menu_help" android:id="@id/mi_help" android:title="@string/menu_help" />
+    <item android:icon="@android:drawable/ic_menu_preferences" android:id="@id/mi_prefs" android:title="@string/menu_settings" />
+</menu>

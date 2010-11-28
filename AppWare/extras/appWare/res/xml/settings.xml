@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PreferenceScreen android:key="settings"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="Online Social Networks">
+        <CheckBoxPreference android:title="@string/settings_login_twitter_title" android:key="@string/settings_login_twitter" android:dependency="@string/settings_enable_sharing" android:defaultValue="false" android:summaryOn="@string/settings_login_twitter_desc_in" android:summaryOff="@string/settings_login_twitter_desc_out" />
+        <PreferenceScreen android:title="@string/settings_share_twitter_screen" android:key="@string/settings_share_twitter_screen" android:summary="@string/settings_share_twitter_screen_desc" android:dependency="@string/settings_login_twitter" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="AppAware">
+        <CheckBoxPreference android:title="@string/settings_enable_sharing" android:key="@string/settings_enable_sharing" android:defaultValue="true" android:summaryOn="@string/settings_enable_sharing_desc_on" android:summaryOff="@string/settings_enable_sharing_desc_off" />
+        <CheckBoxPreference android:layout="?android:preferenceLayoutChild" android:title="@string/settings_notification" android:key="@string/settings_notification" android:dependency="@string/settings_enable_sharing" android:defaultValue="false" android:summaryOn="@string/settings_notification_desc_on" android:summaryOff="@string/settings_notification_desc_off" />
+        <CheckBoxPreference android:layout="?android:preferenceLayoutChild" android:title="@string/settings_tag_notifications" android:key="@string/settings_tag_notifications" android:dependency="@string/settings_enable_sharing" android:defaultValue="false" android:summaryOn="@string/settings_tag_notifications_desc_on" android:summaryOff="@string/settings_tag_notifications_desc_off" />
+        <CheckBoxPreference android:title="@string/settings_location" android:key="@string/settings_location" android:defaultValue="false" android:summaryOn="@string/settings_location_desc_on" android:summaryOff="@string/settings_location_desc_off" />
+        <ListPreference android:entries="@array/distance" android:title="@string/settings_distance" android:key="@string/settings_distance" android:summary="@string/settings_distance_desc" android:defaultValue="km" android:dialogTitle="@string/settings_distance" android:entryValues="@array/distance_values" />
+        <ListPreference android:entries="@array/intervals" android:title="@string/settings_notification_box_interval" android:key="@string/settings_notification_box_interval" android:summary="@string/settings_notification_box_interval_desc" android:defaultValue="10000" android:dialogTitle="@string/settings_notification_box_interval_title" android:entryValues="@array/intervals_values" />
+        <CheckBoxPreference android:title="@string/settings_refresh_on_start" android:key="@string/settings_refresh_on_start" android:defaultValue="true" android:summaryOn="@string/settings_refresh_on_start_desc_on" android:summaryOff="@string/settings_refresh_on_start_desc_off" />
+        <EditTextPreference android:hint="@string/settings_share_text_default" android:title="@string/settings_share_text" android:key="@string/settings_share_text" android:summary="@string/settings_share_text_desc" android:defaultValue="@string/settings_share_text_default" android:dialogTitle="@string/settings_share_text" />
+        <EditTextPreference android:hint="@string/settings_share_user_text_default" android:title="@string/settings_share_user_text" android:key="@string/settings_share_user_text" android:summary="@string/settings_share_user_text_desc" android:defaultValue="@string/settings_share_user_text_default" android:dialogTitle="@string/settings_share_user_text" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Feedback">
+        <PreferenceScreen android:title="@string/settings_feedback" android:key="@string/settings_feedback" android:summary="@string/settings_feedback_desc" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Developers">
+        <EditTextPreference android:hint="@string/settings_developers_hint" android:maxLength="150" android:title="@string/settings_developers" android:key="@string/settings_developers" android:summary="@string/settings_developers_desc" android:dialogTitle="@string/settings_developers" />
+    </PreferenceCategory>
+</PreferenceScreen>

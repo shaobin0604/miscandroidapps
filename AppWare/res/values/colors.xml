@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <color name="divider_dark">#77111111</color>
+    <color name="divider_light">#66707070</color>
+    <color name="bar_dark">#ff222222</color>
+    <color name="bar_light">#ff666666</color>
+    <color name="tag_selected">#ffacbc1a</color>
+</resources>

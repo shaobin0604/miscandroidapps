@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/Header" layout="@layout/header" />
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <ViewSwitcher android:id="@id/switcher_loading" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <ProgressBar android:layout_width="wrap_content" android:layout_height="wrap_content" style="?android:progressBarStyleSmall" />
+                <TextView android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="4.0dip" android:text="@string/message_loading" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <LinearLayout android:orientation="horizontal" android:padding="4.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
+                  xmlns:android="http://schemas.android.com/apk/res/android">
+                    <ImageView android:layout_gravity="center_vertical" android:id="@id/ImageAppIcon" android:layout_width="32.0sp" android:layout_height="32.0sp" android:layout_margin="5.0dip" android:src="@android:drawable/sym_def_app_icon" />
+                    <RelativeLayout android:padding="4.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="12.0sp" android:textColor="#ff8f8f8f" android:ellipsize="marquee" android:id="@id/TextViewApplicationTags" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0sp" android:text="Subtitle Subtitle Subtitle Subtitle Subtitle Subtitle Subtitle Subtitle" android:singleLine="true" android:layout_toLeftOf="@id/LinearLayoutRight" />
+                        <TextView android:textSize="19.0sp" android:textStyle="bold" android:textColor="#ff000000" android:ellipsize="marquee" android:id="@id/TextViewApplicationTitle" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0sp" android:layout_marginRight="10.0sp" android:text="Application Name" android:singleLine="true" android:layout_toLeftOf="@id/LinearLayoutRight" android:layout_below="@id/TextViewApplicationTags" />
+                        <TextView android:textSize="12.0sp" android:textStyle="bold" android:textColor="#ff4f4f4f" android:id="@id/TextViewApplicationPrice" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="3.0sp" android:text="Free" android:singleLine="true" android:layout_below="@id/TextViewApplicationTitle" android:layout_alignParentRight="true" />
+                        <TextView android:textSize="12.0sp" android:textColor="#ff4f4f4f" android:ellipsize="marquee" android:id="@id/TextViewApplicationSubtitle" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0sp" android:text="ETH Zurich" android:singleLine="true" android:layout_toLeftOf="@id/TextViewApplicationSubtitle" android:layout_below="@id/TextViewApplicationTitle" />
+                    </RelativeLayout>
+                </LinearLayout>
+                <LinearLayout android:background="@drawable/tabs_bar" android:layout_width="fill_parent" android:layout_height="40.0dip" android:layout_margin="10.0dip">
+                    <Button android:id="@id/Button_About" android:text="@string/menu_details" style="@style/TabBarButton" />
+                    <View style="@style/TabBarDivider" />
+                    <Button android:id="@id/Button_Users" android:text="@string/menu_people" style="@style/TabBarButton" />
+                    <View style="@style/TabBarDivider" />
+                    <Button android:id="@id/Button_Tags" android:text="@string/menu_tags" style="@style/TabBarButton" />
+                </LinearLayout>
+                <TabHost android:id="@android:id/tabhost" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+                    <LinearLayout android:orientation="vertical" android:padding="0.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                        <TabWidget android:id="@android:id/tabs" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                        <FrameLayout android:id="@android:id/tabcontent" android:padding="0.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+                    </LinearLayout>
+                </TabHost>
+            </LinearLayout>
+        </ViewSwitcher>
+        <View style="@style/HeaderShadow" />
+        <View style="@style/FooterShadow" />
+    </FrameLayout>
+    <LinearLayout android:gravity="center" android:id="@id/Buttons_Bar" android:background="@drawable/bar" android:layout_width="fill_parent" android:layout_height="@dimen/bar_height" android:layout_alignParentBottom="true">
+        <Button android:id="@id/Button_Bar_1" android:text="@string/menu_back" android:drawableTop="@drawable/ic_back" style="@style/BarButton" />
+        <View style="@style/BarDivider" />
+        <Button android:id="@id/Button_Bar_2" android:text="@string/menu_share" android:drawableTop="@drawable/ic_invite_off" style="@style/BarButton" />
+        <View style="@style/BarDivider" />
+        <Button android:id="@id/Button_Bar_4" android:text="@string/menu_open_in_market" android:drawableTop="@drawable/ic_market" style="@style/BarButton" />
+    </LinearLayout>
+</LinearLayout>

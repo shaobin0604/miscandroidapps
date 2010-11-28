@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <style name="BarButton" parent="@android:style/Widget.Button">
+        <item name="android:textSize">12.0dip</item>
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:gravity">bottom|center</item>
+        <item name="android:background">@android:drawable/list_selector_background</item>
+        <item name="android:padding">4.0dip</item>
+        <item name="android:layout_width">0.0dip</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1.0</item>
+    </style>
+    <style name="BarDivider">
+        <item name="android:background">@drawable/divider</item>
+        <item name="android:layout_width">2.0dip</item>
+        <item name="android:layout_height">fill_parent</item>
+    </style>
+    <style name="BarIndicator">
+        <item name="android:textSize">12.0sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:gravity">bottom|center</item>
+        <item name="android:padding">4.0dip</item>
+        <item name="android:layout_width">0.0dip</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1.0</item>
+    </style>
+    <style name="HeaderShadow">
+        <item name="android:layout_gravity">top</item>
+        <item name="android:background">@drawable/header_shadow</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">4.0dip</item>
+    </style>
+    <style name="FooterShadow">
+        <item name="android:layout_gravity">bottom</item>
+        <item name="android:background">@drawable/footer_shadow</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">5.0dip</item>
+    </style>
+    <style name="AppWidgetTitle" parent="@android:style/Widget.TextView">
+        <item name="android:textSize">14.0dip</item>
+        <item name="android:textColor">#ff111111</item>
+        <item name="android:paddingLeft">5.0dip</item>
+        <item name="android:paddingRight">5.0dip</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="AppWidgetDescription" parent="@style/AppWidgetTitle">
+        <item name="android:textSize">12.0dip</item>
+        <item name="android:textColor">#ff111111</item>
+        <item name="android:paddingBottom">1.0dip</item>
+    </style>
+    <style name="AppWidgetFootnote" parent="@style/AppWidgetTitle">
+        <item name="android:textSize">10.0dip</item>
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:layout_gravity">bottom</item>
+        <item name="android:background">@drawable/sidenote_green</item>
+        <item name="android:paddingBottom">1.0dip</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:text">@string/widget_note</item>
+        <item name="android:shadowColor">#ff666666</item>
+        <item name="android:shadowDy">1.0</item>
+        <item name="android:shadowRadius">1.0</item>
+    </style>
+    <style name="AppWidgetSidenote" parent="@android:style/Widget.TextView">
+        <item name="android:textSize">11.0dip</item>
+        <item name="android:textColor">#ff555555</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">fill_parent</item>
+    </style>
+    <style name="AppWidgetSidebutton" parent="@android:style/Widget.Button">
+        <item name="android:textSize">45.0dip</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#ff999999</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:paddingLeft">@dimen/sidebutton_paddinghorizontal</item>
+        <item name="android:paddingRight">@dimen/sidebutton_paddinghorizontal</item>
+        <item name="android:paddingBottom">@dimen/sidebutton_paddingbottom</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">fill_parent</item>
+    </style>
+    <style name="FilterTheme" parent="@android:style/Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+    </style>
+    <style name="LoginTitle">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="LoginEdit">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">4.0dip</item>
+        <item name="android:layout_marginBottom">4.0dip</item>
+        <item name="android:singleLine">true</item>
+    </style>
+    <style name="GuideLayout">
+        <item name="android:orientation">vertical</item>
+        <item name="android:padding">5.0dip</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+    </style>
+    <style name="GuideTitle">
+        <item name="android:textSize">20.0dip</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">7.0dip</item>
+    </style>
+    <style name="GuideText">
+        <item name="android:textSize">15.0dip</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">10.0dip</item>
+    </style>
+    <style name="GuideTerms">
+        <item name="android:textSize">12.0dip</item>
+        <item name="android:textColor">#ff595959</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">20.0dip</item>
+    </style>
+    <style name="LoginOptionTitle">
+        <item name="android:textSize">22.0dip</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#ff333333</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">6.0dip</item>
+    </style>
+    <style name="LoginOptionDesc">
+        <item name="android:textSize">15.0dip</item>
+        <item name="android:textColor">#ff777777</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">6.0dip</item>
+    </style>
+    <style name="WhiteDialog" parent="@android:style/Theme.Light.Panel">
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+    <style name="TabBarButton" parent="@android:style/Widget.Button">
+        <item name="android:textSize">14.0dip</item>
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@android:drawable/list_selector_background</item>
+        <item name="android:padding">4.0dip</item>
+        <item name="android:layout_width">0.0dip</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:layout_weight">1.0</item>
+    </style>
+    <style name="TabBarDivider">
+        <item name="android:background">@drawable/divider</item>
+        <item name="android:layout_width">2.0dip</item>
+        <item name="android:layout_height">fill_parent</item>
+    </style>
+    <style name="NoOverlay" parent="@android:style/Theme.Light.NoTitleBar">
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+</resources>

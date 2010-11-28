@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PreferenceScreen android:key="settings"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBoxPreference android:title="@string/settings_filter_installations" android:key="@string/settings_filter_installations_key" android:defaultValue="true" android:summaryOn="@string/settings_filter_installations_desc_on" android:summaryOff="@string/settings_filter_installations_desc_off" />
+    <CheckBoxPreference android:title="@string/settings_filter_updates" android:key="@string/settings_filter_updates_key" android:defaultValue="true" android:summaryOn="@string/settings_filter_updates_desc_on" android:summaryOff="@string/settings_filter_updates_desc_off" />
+    <CheckBoxPreference android:title="@string/settings_filter_removals" android:key="@string/settings_filter_removals_key" android:defaultValue="true" android:summaryOn="@string/settings_filter_removals_desc_on" android:summaryOff="@string/settings_filter_removals_desc_off" />
+    <CheckBoxPreference android:title="@string/settings_filter_other_versions" android:key="@string/settings_filter_other_versions" android:defaultValue="true" android:summaryOn="@string/settings_filter_other_versions_desc_on" android:summaryOff="@string/settings_filter_other_versions_desc_off" />
+    <CheckBoxPreference android:title="@string/settings_filter_other_devices" android:key="@string/settings_filter_other_devices" android:defaultValue="true" android:summaryOn="@string/settings_filter_other_devices_desc_on" android:summaryOff="@string/settings_filter_other_devices_desc_off" />
+    <CheckBoxPreference android:title="@string/settings_filter_already_installed" android:key="@string/settings_filter_already_installed" android:defaultValue="true" android:summaryOn="@string/settings_filter_already_installed_desc_on" android:summaryOff="@string/settings_filter_already_installed_desc_off" />
+</PreferenceScreen>

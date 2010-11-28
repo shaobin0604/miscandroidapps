@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest android:versionCode="23" android:versionName="2.0.3" android:installLocation="0" package="org.appaware"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <application android:theme="@style/NoOverlay" android:label="@string/app_name" android:icon="@drawable/icon" android:debuggable="false">
+        <activity android:label="@string/app_name" android:name=".MainActivity" android:launchMode="singleTask" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <receiver android:name=".controller.AppUpdatesReceiver">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+                <action android:name="android.intent.action.PACKAGE_REPLACED" />
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+        <activity android:name=".view.SettingsActivity" android:launchMode="singleTask" android:screenOrientation="portrait" />
+        <activity android:name=".view.SettingsTwitterActivity" android:screenOrientation="portrait" />
+        <service android:name=".controller.AppAwareService" />
+        <receiver android:label="@string/widget_label" android:name=".appwidget.AppAwareWidget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="org.appaware.appwidget.ACTION_SHOW_NEXT_APP" />
+                <action android:name="org.appaware.appwidget.ACTION_SHOW_PREV_APP" />
+                <action android:name="org.appaware.appwidget.ACTION_REFRESH" />
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/appwidget" />
+        </receiver>
+        <service android:name=".appwidget.AppAwareWidget$UpdateService" />
+        <meta-data android:name="android.app.default_searchable" android:value="*" />
+        <activity android:name=".view.TagActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="org.appaware.ACTION_TAG_THIS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <receiver android:label="@string/widget_label" android:name=".appwidget.AppAwareWidget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="org.appaware.appwidget.ACTION_SHOW_NEXT_APP" />
+                <action android:name="org.appaware.appwidget.ACTION_SHOW_PREV_APP" />
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/appwidget" />
+        </receiver>
+        <service android:name=".appwidget.AppAwareWidget$UpdateService" />
+        <activity android:name=".view.SearchableActivity" android:launchMode="singleTask" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+            <meta-data android:name="android.app.searchable" android:resource="@xml/searchable" />
+        </activity>
+        <meta-data android:name="android.app.default_searchable" android:value=".view.SearchableActivity" />
+        <provider android:name=".model.SuggestionProvider" android:authorities="org.appaware.SuggestionProvider" />
+        <activity android:theme="@style/FilterTheme" android:name=".view.FilterDialog" android:screenOrientation="portrait" />
+        <provider android:name=".model.EventsProvider" android:authorities="org.appaware.events" />
+        <activity android:name=".view.LoginActivity" android:excludeFromRecents="true" android:launchMode="singleTask" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="myapp" android:host="appawareopenid" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="org.appaware.ACTION_LOGIN_FOR_FRIENDS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".guide.WelcomeActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".guide.BasicsLiveActivity" android:screenOrientation="portrait" />
+        <activity android:name=".guide.BasicsAroundActivity" android:screenOrientation="portrait" />
+        <activity android:name=".guide.BasicsFriendsActivity" android:screenOrientation="portrait" />
+        <activity android:name=".guide.BasicsTagsActivity" android:screenOrientation="portrait" />
+        <activity android:name=".guide.BasicsEndActivity" android:screenOrientation="portrait" />
+        <activity android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" android:label="Log in twitter" android:name=".view.TwitterLoginDialog" android:launchMode="singleTask" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="myapp" android:host="appaware" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".view.TabStream" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="org.appaware.ACTION_UPDATE_STREAM" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".view.ApplicationActivity" android:screenOrientation="portrait" />
+        <activity android:name=".controller.URLReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="http" android:host="appaware.org" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".view.ApplicationAboutActivity" android:screenOrientation="portrait" />
+        <activity android:name=".view.ApplicationEventsActivity" android:screenOrientation="portrait" />
+        <activity android:name=".view.UserActivity" android:screenOrientation="portrait" />
+        <activity android:name=".view.TabTopApps" android:screenOrientation="portrait" />
+        <activity android:name=".view.TabFriendsEvents" android:screenOrientation="portrait" />
+        <activity android:name=".view.TabInstalledApps" android:screenOrientation="portrait" />
+        <activity android:theme="@style/FilterTheme" android:name=".view.UsernameSetupActivity" android:launchMode="singleTop" android:screenOrientation="portrait" />
+        <activity android:name=".view.UserFollowingActivity" />
+    </application>
+    <supports-screens android:anyDensity="true" android:smallScreens="true" android:normalScreens="true" android:largeScreens="true" />
+    <uses-sdk android:minSdkVersion="3" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+</manifest>

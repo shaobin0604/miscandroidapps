@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PreferenceScreen android:key="settings"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/settings_share_twitter_screen">
+        <CheckBoxPreference android:title="@string/settings_share_twitter_installations" android:key="@string/settings_share_twitter_installations" android:defaultValue="true" android:summaryOn="@string/settings_share_twitter_installations_desc_on" android:summaryOff="@string/settings_share_twitter_installations_desc_off" />
+        <CheckBoxPreference android:title="@string/settings_share_twitter_updates" android:key="@string/settings_share_twitter_updates" android:defaultValue="false" android:summaryOn="@string/settings_share_twitter_updates_desc_on" android:summaryOff="@string/settings_share_twitter_updates_desc_off" />
+        <CheckBoxPreference android:title="@string/settings_share_twitter_removals" android:key="@string/settings_share_twitter_removals" android:defaultValue="false" android:summaryOn="@string/settings_share_twitter_removals_desc_on" android:summaryOff="@string/settings_share_twitter_removals_desc_off" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/settings_share_twitter_tweet">
+        <CheckBoxPreference android:title="@string/settings_share_twitter_model" android:key="@string/settings_share_twitter_model" android:defaultValue="true" android:summaryOn="@string/settings_share_twitter_model_desc_on" android:summaryOff="@string/settings_share_twitter_model_desc_off" />
+        <CheckBoxPreference android:title="@string/settings_share_twitter_android" android:key="@string/settings_share_twitter_android" android:defaultValue="false" android:summaryOn="@string/settings_share_twitter_android_desc_on" android:summaryOff="@string/settings_share_twitter_android_desc_off" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/settings_share_twitter_tweet_suffix">
+        <EditTextPreference android:hint="@string/settings_share_twitter_suffix_default" android:title="@string/settings_share_twitter_suffix" android:key="@string/settings_share_twitter_suffix" android:summary="@string/settings_share_twitter_suffix_desc" android:defaultValue="@string/settings_share_twitter_suffix_default" android:dialogTitle="@string/settings_share_twitter_suffix" />
+    </PreferenceCategory>
+</PreferenceScreen>

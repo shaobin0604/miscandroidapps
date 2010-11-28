@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:background="@drawable/appwidget_bg_dither" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <TextView android:gravity="center" android:id="@id/TextViewMessage" android:background="@drawable/appwidget_button_center" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="8.0dip" android:layout_marginRight="8.0dip" android:text="@string/menu_loading" android:maxLines="3" style="@style/AppWidgetDescription" />
+    </LinearLayout>
+    <TextView android:id="@id/TextViewFootnote" android:paddingLeft="6.0dip" android:layout_margin="8.0dip" style="@style/AppWidgetFootnote" />
+    <ImageView android:layout_gravity="bottom|right|center" android:layout_width="36.0dip" android:layout_height="36.0dip" android:src="@drawable/icon" />
+</FrameLayout>

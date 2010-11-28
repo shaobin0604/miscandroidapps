@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout android:orientation="horizontal" android:padding="4.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_gravity="center_vertical" android:id="@id/ImageViewAppIcon" android:layout_width="32.0sp" android:layout_height="32.0sp" android:layout_margin="5.0dip" android:src="@drawable/icon_small" />
+    <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <TextView android:textSize="12.0sp" android:textColor="#ff8f8f8f" android:id="@id/TextViewAppPackageRow" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0sp" android:text="Package name is " />
+        <TextView android:textSize="12.0sp" android:textColor="#ff8f8f8f" android:id="@id/TextViewAppModelRow" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0sp" android:text="org.appaware" android:singleLine="true" android:layout_toRightOf="@id/TextViewAppPackageRow" android:layout_alignBaseline="@id/TextViewAppPackageRow" />
+        <TextView android:textSize="19.0sp" android:textStyle="bold" android:textColor="#ff000000" android:ellipsize="marquee" android:id="@id/TextViewAppNameRow" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0sp" android:text="Application Name" android:singleLine="true" android:layout_below="@id/TextViewAppPackageRow" />
+        <TextView android:textSize="12.0sp" android:textColor="#ff4f4f4f" android:id="@id/TextViewAppDetailsRow" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0sp" android:text="Installed version is " android:layout_below="@id/TextViewAppNameRow" />
+        <TextView android:textSize="12.0sp" android:textColor="#ff4f4f4f" android:id="@id/TextViewAppVersionRow" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0sp" android:text="1.1" android:singleLine="true" android:layout_toRightOf="@id/TextViewAppDetailsRow" android:layout_alignBaseline="@id/TextViewAppDetailsRow" />
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string-array name="appevent_options">
+        <item>Details</item>
+        <item>Tags</item>
+        <item>Open in Market</item>
+        <item>Share</item>
+    </string-array>
+    <string-array name="installed_app_options">
+        <item>Details</item>
+        <item>Tags</item>
+        <item>Open in Market</item>
+        <item>Launch</item>
+        <item>Uninstall</item>
+        <item>Share</item>
+    </string-array>
+    <string-array name="distance">
+        <item>Kilometers</item>
+        <item>Miles</item>
+    </string-array>
+    <string-array name="distance_values">
+        <item>km</item>
+        <item>mi</item>
+    </string-array>
+    <string-array name="privacy">
+        <item>Everybody</item>
+        <item>Only my followers</item>
+    </string-array>
+    <string-array name="privacy_values">
+        <item>1</item>
+        <item>0</item>
+    </string-array>
+    <string-array name="intervals">
+        <item>5 seconds</item>
+        <item>10 seconds</item>
+        <item>30 seconds</item>
+        <item>1 minute</item>
+    </string-array>
+    <string-array name="intervals_values">
+        <item>5000</item>
+        <item>10000</item>
+        <item>30000</item>
+        <item>60000</item>
+    </string-array>
+    <string-array name="friend_list_options">
+        <item>Details</item>
+        <item>Unfollow</item>
+    </string-array>
+    <string-array name="delta">
+        <item>Last hour</item>
+        <item>Last day</item>
+        <item>Last week</item>
+    </string-array>
+    <string-array name="top_filter">
+        <item>My device model</item>
+        <item>My version of Android</item>
+        <item>No filter</item>
+    </string-array>
+</resources>

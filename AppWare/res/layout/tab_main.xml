@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TabHost android:id="@android:id/tabhost" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <include android:id="@+id/Header" layout="@layout/header" />
+        <FrameLayout android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+            <TabWidget android:id="@android:id/tabs" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <FrameLayout android:id="@android:id/tabcontent" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            <View style="@style/HeaderShadow" />
+            <View style="@style/FooterShadow" />
+        </FrameLayout>
+        <LinearLayout android:gravity="center" android:id="@+id/Buttons_Bar" android:background="@drawable/bar" android:layout_width="fill_parent" android:layout_height="@dimen/bar_height" android:layout_alignParentBottom="true">
+            <FrameLayout android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+                <Button android:id="@+id/Button_Bar_1" android:layout_width="fill_parent" android:text="@string/menu_live" android:drawableTop="@drawable/ic_live" style="@style/BarButton" />
+                <View android:layout_gravity="bottom" android:id="@+id/Indicator_1" android:background="@drawable/appwidget_settings_ind_on_c" android:layout_width="fill_parent" android:layout_height="5.0dip" />
+            </FrameLayout>
+            <View style="@style/BarDivider" />
+            <FrameLayout android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+                <Button android:id="@+id/Button_Bar_2" android:layout_width="fill_parent" android:text="@string/menu_around" android:drawableTop="@drawable/ic_araund" style="@style/BarButton" />
+                <View android:layout_gravity="bottom" android:id="@+id/Indicator_2" android:background="@drawable/appwidget_settings_ind_off_c" android:layout_width="fill_parent" android:layout_height="5.0dip" />
+            </FrameLayout>
+            <View style="@style/BarDivider" />
+            <FrameLayout android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+                <Button android:id="@+id/Button_Bar_3" android:layout_width="fill_parent" android:text="@string/menu_top" android:drawableTop="@drawable/ic_top" style="@style/BarButton" />
+                <View android:layout_gravity="bottom" android:id="@+id/Indicator_3" android:background="@drawable/appwidget_settings_ind_off_c" android:layout_width="fill_parent" android:layout_height="5.0dip" />
+            </FrameLayout>
+            <View style="@style/BarDivider" />
+            <FrameLayout android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+                <Button android:id="@+id/Button_Bar_4" android:layout_width="fill_parent" android:text="@string/menu_friends" android:drawableTop="@drawable/ic_friends" style="@style/BarButton" />
+                <View android:layout_gravity="bottom" android:id="@+id/Indicator_4" android:background="@drawable/appwidget_settings_ind_off_c" android:layout_width="fill_parent" android:layout_height="5.0dip" />
+            </FrameLayout>
+            <View style="@style/BarDivider" />
+            <FrameLayout android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+                <Button android:id="@+id/Button_Bar_5" android:layout_width="fill_parent" android:text="@string/menu_installed_apps" android:drawableTop="@drawable/ic_installed" style="@style/BarButton" />
+                <View android:layout_gravity="bottom" android:id="@+id/Indicator_5" android:background="@drawable/appwidget_settings_ind_off_c" android:layout_width="fill_parent" android:layout_height="5.0dip" />
+            </FrameLayout>
+        </LinearLayout>
+    </LinearLayout>
+</TabHost>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <dimen name="bar_height">53.0dip</dimen>
+    <dimen name="sidebutton_paddingbottom">13.0dip</dimen>
+    <dimen name="sidebutton_paddinghorizontal">10.0dip</dimen>
+</resources>

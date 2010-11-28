@@ -1,0 +1,25 @@
+body {
+  background-color: white;
+  color: black;
+  font-family: arial;
+  font-size: 16;
+}
+
+a:link { text-decoration: underline; color: #AEB90A; }
+a:visited {text-decoration: underline; color: #AEB90A}
+a:active {text-decoration: underline}
+a:hover {text-decoration: underline}
+
+#new_title {
+	color: #AEB90A;
+	font-weight: bold;
+	margin-bottom: 7px;
+}
+
+#new {
+	color: #5F5F5F;
+	font-family: arial;
+	font-size: 14;
+	padding: 5px;
+	border: 2px solid #AEB90A;
+}

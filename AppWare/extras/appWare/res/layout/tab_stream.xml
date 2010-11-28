@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<merge
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ViewSwitcher android:id="@id/switcher_loading" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <include layout="@layout/loading_fill_parent" />
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:orientation="vertical" android:id="@id/LinearLayoutUpdates" android:background="#ffefbe3b" android:visibility="gone" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="8.0sp">
+                <LinearLayout android:orientation="vertical" android:background="#ffffffaa" android:padding="6.0sp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="5.0sp">
+                    <TextView android:textSize="14.0sp" android:textColor="#ff6f6f6f" android:gravity="center" android:id="@id/TextViewUpdates" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="42 more events since your last update" />
+                    <TextView android:textSize="11.0sp" android:textColor="#ff9f9f9f" android:gravity="center" android:id="@id/TextViewShake" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="3.0sp" android:text="@string/message_shake" />
+                </LinearLayout>
+            </LinearLayout>
+            <ListView android:id="@android:id/list" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0" android:fastScrollEnabled="true" />
+            <TextView android:textSize="15.0sp" android:gravity="center" android:id="@android:id/empty" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/events_empty" />
+        </LinearLayout>
+    </ViewSwitcher>
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/LayoutSystemLocation" android:background="#ffffffff" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <TextView android:textSize="15.0sp" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="15.0dip" android:text="Your wireless networks location is disabled in the system settings." />
+        <Button android:id="@id/ButtonSystemLocation" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="120.0dip" android:text="Enable it" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/LayoutMask" android:background="#ffffffff" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <TextView android:textSize="15.0sp" android:gravity="center" android:id="@id/TextMask" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="15.0dip" android:text="To see what is happening around you, you need to share your location." />
+        <Button android:id="@id/ButtonMask" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="120.0dip" android:text="Yes, share my location" />
+    </LinearLayout>
+</merge>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout android:orientation="horizontal" android:padding="4.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_gravity="center_vertical" android:id="@id/ImageAppIcon" android:layout_width="32.0sp" android:layout_height="32.0sp" android:layout_margin="5.0dip" android:src="@android:drawable/sym_def_app_icon" />
+    <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <TextView android:textSize="12.0sp" android:textColor="#ff8f8f8f" android:ellipsize="marquee" android:id="@id/TextViewTopAppTags" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0sp" android:text="Subtitle Subtitle Subtitle" android:singleLine="true" />
+        <TextView android:textSize="19.0sp" android:textStyle="bold" android:textColor="#ff7db04c" android:ellipsize="marquee" android:id="@id/TextViewTopAppName" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0sp" android:layout_marginRight="10.0sp" android:text="Application Name" android:singleLine="true" />
+        <TextView android:textSize="12.0sp" android:textColor="#ff4f4f4f" android:ellipsize="marquee" android:id="@id/TextViewTopAppSubtitle" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0sp" android:text="ETH Zurich" android:singleLine="true" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:id="@id/LinearLayoutRight" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="10.0sp">
+        <ImageView android:id="@id/ImageViewRanking" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ranking_new" />
+        <TextView android:textSize="12.0sp" android:textColor="#ff8f8f8f" android:gravity="center_horizontal" android:id="@id/TextViewTopAppRankingDelta" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="+1" />
+    </LinearLayout>
+</LinearLayout>

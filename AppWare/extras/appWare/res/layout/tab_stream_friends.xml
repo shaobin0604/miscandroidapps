@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<merge
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ViewSwitcher android:id="@id/switcher_loading" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <include layout="@layout/loading_fill_parent" />
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:background="@drawable/tabs_bar" android:layout_width="fill_parent" android:layout_height="40.0dip" android:layout_margin="10.0dip">
+                <Button android:id="@id/Button_Following" android:text="@string/tab_user_following" style="@style/TabBarButton" />
+                <View style="@style/TabBarDivider" />
+                <Button android:id="@id/Button_Follower" android:text="@string/tab_user_follower" style="@style/TabBarButton" />
+                <View style="@style/TabBarDivider" />
+                <Button android:id="@id/Button_Search" android:text="@string/menu_search_people" style="@style/TabBarButton" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:id="@id/LinearLayoutUpdates" android:background="#ffefbe3b" android:visibility="gone" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="8.0sp" android:layout_marginRight="8.0sp" android:layout_marginBottom="8.0sp">
+                <LinearLayout android:orientation="vertical" android:background="#ffffffaa" android:padding="6.0sp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="5.0sp">
+                    <TextView android:textSize="14.0sp" android:textColor="#ff6f6f6f" android:gravity="center" android:id="@id/TextViewUpdates" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="42 more events since your last update" />
+                    <TextView android:textSize="11.0sp" android:textColor="#ff9f9f9f" android:gravity="center" android:id="@id/TextViewShake" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="3.0sp" android:text="@string/message_shake" />
+                </LinearLayout>
+            </LinearLayout>
+            <ListView android:id="@android:id/list" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" android:fastScrollEnabled="true" />
+            <TextView android:textSize="15.0sp" android:gravity="center" android:id="@android:id/empty" android:layout_width="fill_parent" android:layout_height="0.0dip" android:text="@string/events_empty" android:layout_weight="1.0" />
+        </LinearLayout>
+    </ViewSwitcher>
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/LayoutNotSignedIn" android:background="#ffffffff" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <TextView android:textSize="15.0sp" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="15.0dip" android:text="@string/friends_need_login" />
+        <Button android:id="@id/Button_Signin" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="120.0dip" android:text="@string/button_sign_in" />
+    </LinearLayout>
+</merge>

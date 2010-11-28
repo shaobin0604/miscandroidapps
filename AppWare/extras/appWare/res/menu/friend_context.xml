@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@id/mi_details" android:title="@string/menu_details" />
+    <item android:id="@id/mi_share" android:title="@string/menu_share" />
+    <item android:id="@id/mi_unfollow" android:title="@string/menu_friend_unfollow" />
+</menu>

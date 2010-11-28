@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/Header" layout="@layout/header_tutorial" />
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_marginRight="20.0dip" android:weightSum="6.0"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <TextView android:background="@drawable/guide_rounded_on_current" android:layout_width="15.0dip" android:layout_height="15.0dip" android:layout_marginLeft="20.0dip" android:layout_weight="1.0" />
+        <TextView android:background="@drawable/guide_rounded_off" android:layout_width="15.0dip" android:layout_height="15.0dip" android:layout_marginLeft="20.0dip" android:layout_weight="1.0" />
+        <TextView android:background="@drawable/guide_rounded_off" android:layout_width="15.0dip" android:layout_height="15.0dip" android:layout_marginLeft="20.0dip" android:layout_weight="1.0" />
+        <TextView android:background="@drawable/guide_rounded_off" android:layout_width="15.0dip" android:layout_height="15.0dip" android:layout_marginLeft="20.0dip" android:layout_weight="1.0" />
+        <TextView android:background="@drawable/guide_rounded_off" android:layout_width="15.0dip" android:layout_height="15.0dip" android:layout_marginLeft="20.0dip" android:layout_weight="1.0" />
+        <TextView android:background="@drawable/guide_rounded_off" android:layout_width="15.0dip" android:layout_height="15.0dip" android:layout_marginLeft="20.0dip" android:layout_weight="1.0" />
+    </LinearLayout>
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout style="@style/GuideLayout">
+                <TextView android:text="Welcome to AppAware!" style="@style/GuideTitle" />
+                <TextView android:text="AppAware is a unique way to discover new and unexpected apps while sharing your installations with friends and other users." style="@style/GuideText" />
+                <ImageView android:layout_gravity="center_horizontal" android:id="@id/ImageView01" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/appaware_concept" style="@style/GuideText" />
+                <TextView android:text="This short tutorial will guide you through AppAware\'s main features and help you setup some most important settings." style="@style/GuideText" />
+                <TextView android:id="@id/TextGuideTerms" android:text="@string/terms_of_service" style="@style/GuideTerms" />
+            </LinearLayout>
+        </ScrollView>
+        <View android:visibility="gone" style="@style/HeaderShadow" />
+        <View style="@style/FooterShadow" />
+    </FrameLayout>
+    <LinearLayout android:gravity="center" android:id="@id/Buttons_Bar" android:background="@drawable/bar" android:layout_width="fill_parent" android:layout_height="@dimen/bar_height" android:layout_alignParentBottom="true">
+        <Button android:id="@id/Button_Bar_Back" android:visibility="invisible" android:text="@string/menu_back" android:drawableTop="@drawable/ic_back" style="@style/BarButton" />
+        <View style="@style/BarDivider" />
+        <TextView android:id="@id/TextViewProgress" style="@style/BarIndicator" />
+        <View style="@style/BarDivider" />
+        <Button android:id="@id/Button_Bar_Next" android:text="@string/menu_next" android:drawableTop="@drawable/ic_next" style="@style/BarButton" />
+    </LinearLayout>
+</LinearLayout>

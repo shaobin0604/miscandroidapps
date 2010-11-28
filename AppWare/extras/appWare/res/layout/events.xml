@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ListView android:id="@android:id/list" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0" android:fastScrollEnabled="true" />
+    <TextView android:textSize="15.0sp" android:gravity="center" android:id="@android:id/empty" android:padding="10.0sp" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/application_empty" android:layout_weight="1.0" />
+</LinearLayout>

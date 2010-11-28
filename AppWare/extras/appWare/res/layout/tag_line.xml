@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout android:gravity="bottom|center" android:paddingLeft="2.0dip" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="40.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

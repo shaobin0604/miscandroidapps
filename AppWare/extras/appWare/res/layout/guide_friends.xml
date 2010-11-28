@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/Header" layout="@layout/header_tutorial" />
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_marginRight="20.0dip" android:weightSum="6.0"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <TextView android:background="@drawable/guide_rounded_on" android:layout_width="15.0dip" android:layout_height="15.0dip" android:layout_marginLeft="20.0dip" android:layout_weight="1.0" />
+        <TextView android:background="@drawable/guide_rounded_on" android:layout_width="15.0dip" android:layout_height="15.0dip" android:layout_marginLeft="20.0dip" android:layout_weight="1.0" />
+        <TextView android:background="@drawable/guide_rounded_on" android:layout_width="15.0dip" android:layout_height="15.0dip" android:layout_marginLeft="20.0dip" android:layout_weight="1.0" />
+        <TextView android:background="@drawable/guide_rounded_on_current" android:layout_width="15.0dip" android:layout_height="15.0dip" android:layout_marginLeft="20.0dip" android:layout_weight="1.0" />
+        <TextView android:background="@drawable/guide_rounded_off" android:layout_width="15.0dip" android:layout_height="15.0dip" android:layout_marginLeft="20.0dip" android:layout_weight="1.0" />
+        <TextView android:background="@drawable/guide_rounded_off" android:layout_width="15.0dip" android:layout_height="15.0dip" android:layout_marginLeft="20.0dip" android:layout_weight="1.0" />
+    </LinearLayout>
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout style="@style/GuideLayout">
+                <TextView android:text="Social stream" style="@style/GuideTitle" />
+                <TextView android:text="By following your friends\' installations, updates, and removals, stay updated with what they find interesting on the Android Market." style="@style/GuideText" />
+                <TextView android:visibility="gone" android:text="Who can look at the applications you share?" style="@style/GuideText" />
+                <RadioGroup android:orientation="vertical" android:id="@id/radiogroup_privacy" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0sp" android:layout_marginTop="10.0dip">
+                    <RadioButton android:id="@id/radio_everybody" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true" android:text="Everybody" />
+                    <RadioButton android:id="@id/radio_only_friends" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Only my friends" />
+                </RadioGroup>
+                <TextView android:text="To stay updated with someone, search for his/her username and then click the \'Follow\' button, or invite him/her to AppAware from your profile." style="@style/GuideText" />
+            </LinearLayout>
+        </ScrollView>
+        <View style="@style/FooterShadow" />
+    </FrameLayout>
+    <LinearLayout android:gravity="center" android:id="@id/Buttons_Bar" android:background="@drawable/bar" android:layout_width="fill_parent" android:layout_height="@dimen/bar_height" android:layout_alignParentBottom="true">
+        <Button android:id="@id/Button_Bar_Back" android:text="@string/menu_back" android:drawableTop="@drawable/ic_back" style="@style/BarButton" />
+        <View style="@style/BarDivider" />
+        <TextView android:id="@id/TextViewProgress" style="@style/BarIndicator" />
+        <View style="@style/BarDivider" />
+        <Button android:id="@id/Button_Bar_Next" android:text="@string/menu_next" android:drawableTop="@drawable/ic_next" style="@style/BarButton" />
+    </LinearLayout>
+</LinearLayout>
