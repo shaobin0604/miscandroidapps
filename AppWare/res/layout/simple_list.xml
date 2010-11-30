@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewSwitcher android:id="@+id/switcher_loading" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:layout_gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ProgressBar android:layout_width="wrap_content" android:layout_height="wrap_content" style="?android:progressBarStyleSmall" />
+        <TextView android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="4.0dip" android:text="@string/message_loading" />
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ListView android:id="@android:id/list" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0" android:fastScrollEnabled="true" />
+        <TextView android:gravity="center" android:id="@android:id/empty" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/message_no_user_found" />
+    </LinearLayout>
+</ViewSwitcher>

@@ -1,6 +1,7 @@
 package com.example.appware;
 
 import android.app.TabActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -60,7 +61,7 @@ public class MainActivity extends TabActivity implements TabContentFactory, OnTa
                 .setContent(this));
         mTabHost.addTab(mTabHost.newTabSpec("tab3")
                 .setIndicator("tab3")
-                .setContent(this));
+                .setContent(new Intent(this, TabTopApps.class)));
         mTabHost.addTab(mTabHost.newTabSpec("tab4")
                 .setIndicator("tab4")
                 .setContent(this));
