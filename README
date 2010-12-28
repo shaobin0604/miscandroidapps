@@ -1,0 +1,5 @@
+
+NotificationTest
+----------------
+从 Notification 有条件的启动 Activity, 如果应用已启动则将其置到前台，如果没有启动则 start
+Splash Activity。
