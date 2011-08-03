@@ -1,0 +1,12 @@
+com.example.vibratortest.MainActivity -> com.example.vibratortest.MainActivity:
+    android.widget.Button mPattern1 -> a
+    android.widget.Button mPattern2 -> b
+    android.widget.Button mPattern3 -> c
+    android.widget.Button mPattern4 -> d
+    android.widget.Button mPattern5 -> e
+    android.widget.Button mPattern6 -> f
+    android.os.Vibrator mVibrator -> g
+    long[] DEFAULT_VIBE_PATTERN -> h
+    void onCreate(android.os.Bundle) -> onCreate
+    void onClick(android.view.View) -> onClick
+    long[] loadVibratePattern(int) -> a

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<style name="ContentTabRadioButton" parent="@android:style/Widget.CompoundButton.RadioButton">
+		<item name="android:textSize">14.0sp</item>
+		<item name="android:textStyle">bold</item>
+		<item name="android:ellipsize">end</item>
+		<item name="android:gravity">center</item>
+		<item name="android:background">@drawable/content_tab_bg</item>
+		<item name="android:layout_height">fill_parent</item>
+		<item name="android:button">@null</item>
+		<item name="android:minHeight">36.0dip</item>
+		<item name="android:width">0.0dip</item>
+		<item name="android:layout_weight">1.0</item>
+	</style>
+</resources>

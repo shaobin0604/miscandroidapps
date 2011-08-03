@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, MainActivity!</string>
+    <string name="app_name">SensorDemo</string>
+    
+    <string name="prefs_key_ip">prefs_key_ip</string>
+    <string name="prefs_title_ip">Server IP Address</string>
+    <string name="prefs_dlg_title_ip">Please input Server IP address</string>
+    
+    <string name="prefs_key_port">prefs_key_port</string>
+    <string name="prefs_title_port">Server Port</string>
+    <string name="prefs_dlg_title_port">Please input Server port</string>
+    
+    <string name="prefs_key_sampling_rate">prefs_key_sampling_rate</string>
+    <string name="prefs_title_sampling_rate">Sample Rate</string>
+    
+    <string name="prefs_key_listen">prefs_key_listen</string>
+    <string name="prefs_title_listen">Start Listen</string>
+    
+    <string name="extras_key_cmd">extras_key_cmd</string>
+</resources>

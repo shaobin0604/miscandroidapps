@@ -1,0 +1,474 @@
+_____________________________________________________________________
++ Program class: com/example/vibratortest/MainActivity
+  Superclass:    android/app/Activity
+  Major version: 0x31
+  Minor version: 0x0
+  Access flags:  0x21
+    = public class com.example.vibratortest.MainActivity extends android.app.Activity
+
+Interfaces (count = 1):
+  - Class [android/view/View$OnClickListener]
+
+Constant Pool (count = 118):
+  - Integer [2130903040]
+  - Integer [2130968576]
+  - Integer [2130968577]
+  - Integer [2130968578]
+  - Integer [2130968579]
+  - Integer [2130968580]
+  - Integer [2130968581]
+  - Integer [2131099648]
+  - Integer [2131099649]
+  - Integer [2131099650]
+  - Integer [2131099651]
+  - Integer [2131099652]
+  - Integer [2131099653]
+  - String [LockPatternView]
+  - String [Vibrate pattern missing, using default]
+  - String [vibrator]
+  - Class [android/app/Activity]
+  - Class [android/content/res/Resources]
+  - Class [android/content/res/Resources$NotFoundException]
+  - Class [android/os/Vibrator]
+  - Class [android/util/Log]
+  - Class [android/view/View]
+  - Class [android/view/View$OnClickListener]
+  - Class [android/widget/Button]
+  - Class [com/example/vibratortest/MainActivity]
+  - Long [40]
+  - Long [41]
+  - Fieldref [com/example/vibratortest/MainActivity.a Landroid/widget/Button;]
+  - Fieldref [com/example/vibratortest/MainActivity.b Landroid/widget/Button;]
+  - Fieldref [com/example/vibratortest/MainActivity.c Landroid/widget/Button;]
+  - Fieldref [com/example/vibratortest/MainActivity.d Landroid/widget/Button;]
+  - Fieldref [com/example/vibratortest/MainActivity.e Landroid/widget/Button;]
+  - Fieldref [com/example/vibratortest/MainActivity.f Landroid/widget/Button;]
+  - Fieldref [com/example/vibratortest/MainActivity.g Landroid/os/Vibrator;]
+  - Fieldref [com/example/vibratortest/MainActivity.h [J]
+  - Methodref [android/app/Activity.<init> ()V]
+  - Methodref [android/app/Activity.onCreate (Landroid/os/Bundle;)V]
+  - Methodref [android/content/res/Resources.getIntArray (I)[I]
+  - Methodref [android/os/Vibrator.vibrate (J)V]
+  - Methodref [android/os/Vibrator.vibrate ([JI)V]
+  - Methodref [android/util/Log.e (Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I]
+  - Methodref [android/widget/Button.setOnClickListener (Landroid/view/View$OnClickListener;)V]
+  - Methodref [com/example/vibratortest/MainActivity.a (I)[J]
+  - Methodref [com/example/vibratortest/MainActivity.findViewById (I)Landroid/view/View;]
+  - Methodref [com/example/vibratortest/MainActivity.getResources ()Landroid/content/res/Resources;]
+  - Methodref [com/example/vibratortest/MainActivity.getSystemService (Ljava/lang/String;)Ljava/lang/Object;]
+  - Methodref [com/example/vibratortest/MainActivity.setContentView (I)V]
+  + NameAndType [<init> ()V]
+  + NameAndType [a (I)[J]
+  + NameAndType [a Landroid/widget/Button;]
+  + NameAndType [b Landroid/widget/Button;]
+  + NameAndType [c Landroid/widget/Button;]
+  + NameAndType [d Landroid/widget/Button;]
+  + NameAndType [e (Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I]
+  + NameAndType [e Landroid/widget/Button;]
+  + NameAndType [f Landroid/widget/Button;]
+  + NameAndType [findViewById (I)Landroid/view/View;]
+  + NameAndType [g Landroid/os/Vibrator;]
+  + NameAndType [getIntArray (I)[I]
+  + NameAndType [getResources ()Landroid/content/res/Resources;]
+  + NameAndType [getSystemService (Ljava/lang/String;)Ljava/lang/Object;]
+  + NameAndType [h [J]
+  + NameAndType [onCreate (Landroid/os/Bundle;)V]
+  + NameAndType [setContentView (I)V]
+  + NameAndType [setOnClickListener (Landroid/view/View$OnClickListener;)V]
+  + NameAndType [vibrate (J)V]
+  + NameAndType [vibrate ([JI)V]
+  + Utf8 [()Landroid/content/res/Resources;]
+  + Utf8 [()V]
+  + Utf8 [(I)Landroid/view/View;]
+  + Utf8 [(I)V]
+  + Utf8 [(I)[I]
+  + Utf8 [(I)[J]
+  + Utf8 [(J)V]
+  + Utf8 [(Landroid/os/Bundle;)V]
+  + Utf8 [(Landroid/view/View$OnClickListener;)V]
+  + Utf8 [(Landroid/view/View;)V]
+  + Utf8 [(Ljava/lang/String;)Ljava/lang/Object;]
+  + Utf8 [(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I]
+  + Utf8 [([JI)V]
+  + Utf8 [<clinit>]
+  + Utf8 [<init>]
+  + Utf8 [Code]
+  + Utf8 [Landroid/os/Vibrator;]
+  + Utf8 [Landroid/widget/Button;]
+  + Utf8 [LockPatternView]
+  + Utf8 [Vibrate pattern missing, using default]
+  + Utf8 [[J]
+  + Utf8 [a]
+  + Utf8 [android/app/Activity]
+  + Utf8 [android/content/res/Resources]
+  + Utf8 [android/content/res/Resources$NotFoundException]
+  + Utf8 [android/os/Vibrator]
+  + Utf8 [android/util/Log]
+  + Utf8 [android/view/View]
+  + Utf8 [android/view/View$OnClickListener]
+  + Utf8 [android/widget/Button]
+  + Utf8 [b]
+  + Utf8 [c]
+  + Utf8 [com/example/vibratortest/MainActivity]
+  + Utf8 [d]
+  + Utf8 [e]
+  + Utf8 [f]
+  + Utf8 [findViewById]
+  + Utf8 [g]
+  + Utf8 [getIntArray]
+  + Utf8 [getResources]
+  + Utf8 [getSystemService]
+  + Utf8 [h]
+  + Utf8 [onClick]
+  + Utf8 [onCreate]
+  + Utf8 [setContentView]
+  + Utf8 [setOnClickListener]
+  + Utf8 [vibrate]
+  + Utf8 [vibrator]
+
+Fields (count = 8):
+  + Field:        a Landroid/widget/Button;
+    Access flags: 0x2
+      = private android.widget.Button a
+  + Field:        b Landroid/widget/Button;
+    Access flags: 0x2
+      = private android.widget.Button b
+  + Field:        c Landroid/widget/Button;
+    Access flags: 0x2
+      = private android.widget.Button c
+  + Field:        d Landroid/widget/Button;
+    Access flags: 0x2
+      = private android.widget.Button d
+  + Field:        e Landroid/widget/Button;
+    Access flags: 0x2
+      = private android.widget.Button e
+  + Field:        f Landroid/widget/Button;
+    Access flags: 0x2
+      = private android.widget.Button f
+  + Field:        g Landroid/os/Vibrator;
+    Access flags: 0x2
+      = private android.os.Vibrator g
+  + Field:        h [J
+    Access flags: 0x1a
+      = private static final long[] h
+
+Methods (count = 5):
+  - Method:       <clinit>()V
+    Access flags: 0x8
+      = static void <clinit>()
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 23, locals = 0, stack = 5):
+      [0] iconst_4
+      [1] newarray 11
+      [3] dup
+      [4] iconst_1
+      [5] lconst_1
+      [6] lastore
+      [7] dup
+      [8] iconst_2
+      [9] ldc2_w #26
+        - Long [40]
+      [12] lastore
+      [13] dup
+      [14] iconst_3
+      [15] ldc2_w #28
+        - Long [41]
+      [18] lastore
+      [19] putstatic #37
+        - Fieldref [com/example/vibratortest/MainActivity.h [J]
+      [22] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  - Method:       <init>()V
+    Access flags: 0x1
+      = public MainActivity()
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 5, locals = 1, stack = 1):
+      [0] aload_0 v0
+      [1] invokespecial #38
+        - Methodref [android/app/Activity.<init> ()V]
+      [4] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       onCreate(Landroid/os/Bundle;)V
+    Access flags: 0x1
+      = public void onCreate(android.os.Bundle)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 151, locals = 2, stack = 3):
+      [0] aload_0 v0
+      [1] aload_1 v1
+      [2] invokespecial #39
+        - Methodref [android/app/Activity.onCreate (Landroid/os/Bundle;)V]
+      [5] aload_0 v0
+      [6] ldc #1
+        - Integer [2130903040]
+      [8] invokevirtual #49
+        - Methodref [com/example/vibratortest/MainActivity.setContentView (I)V]
+      [11] aload_0 v0
+      [12] aload_0 v0
+      [13] ldc #16
+        - String [vibrator]
+      [15] invokevirtual #48
+        - Methodref [com/example/vibratortest/MainActivity.getSystemService (Ljava/lang/String;)Ljava/lang/Object;]
+      [18] checkcast #20
+        - Class [android/os/Vibrator]
+      [21] putfield #36
+        - Fieldref [com/example/vibratortest/MainActivity.g Landroid/os/Vibrator;]
+      [24] aload_0 v0
+      [25] aload_0 v0
+      [26] ldc #8
+        - Integer [2131099648]
+      [28] invokevirtual #46
+        - Methodref [com/example/vibratortest/MainActivity.findViewById (I)Landroid/view/View;]
+      [31] checkcast #24
+        - Class [android/widget/Button]
+      [34] putfield #30
+        - Fieldref [com/example/vibratortest/MainActivity.a Landroid/widget/Button;]
+      [37] aload_0 v0
+      [38] aload_0 v0
+      [39] ldc #9
+        - Integer [2131099649]
+      [41] invokevirtual #46
+        - Methodref [com/example/vibratortest/MainActivity.findViewById (I)Landroid/view/View;]
+      [44] checkcast #24
+        - Class [android/widget/Button]
+      [47] putfield #31
+        - Fieldref [com/example/vibratortest/MainActivity.b Landroid/widget/Button;]
+      [50] aload_0 v0
+      [51] aload_0 v0
+      [52] ldc #10
+        - Integer [2131099650]
+      [54] invokevirtual #46
+        - Methodref [com/example/vibratortest/MainActivity.findViewById (I)Landroid/view/View;]
+      [57] checkcast #24
+        - Class [android/widget/Button]
+      [60] putfield #32
+        - Fieldref [com/example/vibratortest/MainActivity.c Landroid/widget/Button;]
+      [63] aload_0 v0
+      [64] aload_0 v0
+      [65] ldc #11
+        - Integer [2131099651]
+      [67] invokevirtual #46
+        - Methodref [com/example/vibratortest/MainActivity.findViewById (I)Landroid/view/View;]
+      [70] checkcast #24
+        - Class [android/widget/Button]
+      [73] putfield #33
+        - Fieldref [com/example/vibratortest/MainActivity.d Landroid/widget/Button;]
+      [76] aload_0 v0
+      [77] aload_0 v0
+      [78] ldc #12
+        - Integer [2131099652]
+      [80] invokevirtual #46
+        - Methodref [com/example/vibratortest/MainActivity.findViewById (I)Landroid/view/View;]
+      [83] checkcast #24
+        - Class [android/widget/Button]
+      [86] putfield #34
+        - Fieldref [com/example/vibratortest/MainActivity.e Landroid/widget/Button;]
+      [89] aload_0 v0
+      [90] aload_0 v0
+      [91] ldc #13
+        - Integer [2131099653]
+      [93] invokevirtual #46
+        - Methodref [com/example/vibratortest/MainActivity.findViewById (I)Landroid/view/View;]
+      [96] checkcast #24
+        - Class [android/widget/Button]
+      [99] putfield #35
+        - Fieldref [com/example/vibratortest/MainActivity.f Landroid/widget/Button;]
+      [102] aload_0 v0
+      [103] getfield #30
+        - Fieldref [com/example/vibratortest/MainActivity.a Landroid/widget/Button;]
+      [106] aload_0 v0
+      [107] invokevirtual #44
+        - Methodref [android/widget/Button.setOnClickListener (Landroid/view/View$OnClickListener;)V]
+      [110] aload_0 v0
+      [111] getfield #31
+        - Fieldref [com/example/vibratortest/MainActivity.b Landroid/widget/Button;]
+      [114] aload_0 v0
+      [115] invokevirtual #44
+        - Methodref [android/widget/Button.setOnClickListener (Landroid/view/View$OnClickListener;)V]
+      [118] aload_0 v0
+      [119] getfield #32
+        - Fieldref [com/example/vibratortest/MainActivity.c Landroid/widget/Button;]
+      [122] aload_0 v0
+      [123] invokevirtual #44
+        - Methodref [android/widget/Button.setOnClickListener (Landroid/view/View$OnClickListener;)V]
+      [126] aload_0 v0
+      [127] getfield #33
+        - Fieldref [com/example/vibratortest/MainActivity.d Landroid/widget/Button;]
+      [130] aload_0 v0
+      [131] invokevirtual #44
+        - Methodref [android/widget/Button.setOnClickListener (Landroid/view/View$OnClickListener;)V]
+      [134] aload_0 v0
+      [135] getfield #34
+        - Fieldref [com/example/vibratortest/MainActivity.e Landroid/widget/Button;]
+      [138] aload_0 v0
+      [139] invokevirtual #44
+        - Methodref [android/widget/Button.setOnClickListener (Landroid/view/View$OnClickListener;)V]
+      [142] aload_0 v0
+      [143] getfield #35
+        - Fieldref [com/example/vibratortest/MainActivity.f Landroid/widget/Button;]
+      [146] aload_0 v0
+      [147] invokevirtual #44
+        - Methodref [android/widget/Button.setOnClickListener (Landroid/view/View$OnClickListener;)V]
+      [150] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       onClick(Landroid/view/View;)V
+    Access flags: 0x1
+      = public void onClick(android.view.View)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 136, locals = 3, stack = 3):
+      [0] getstatic #37
+        - Fieldref [com/example/vibratortest/MainActivity.h [J]
+      [3] astore_2 v2
+      [4] aload_1 v1
+      [5] aload_0 v0
+      [6] getfield #30
+        - Fieldref [com/example/vibratortest/MainActivity.a Landroid/widget/Button;]
+      [9] ifacmpne +13 (target=22)
+      [12] aload_0 v0
+      [13] ldc #4
+        - Integer [2130968578]
+      [15] invokespecial #45
+        - Methodref [com/example/vibratortest/MainActivity.a (I)[J]
+      [18] astore_2 v2
+      [19] goto +90 (target=109)
+      [22] aload_1 v1
+      [23] aload_0 v0
+      [24] getfield #31
+        - Fieldref [com/example/vibratortest/MainActivity.b Landroid/widget/Button;]
+      [27] ifacmpne +13 (target=40)
+      [30] aload_0 v0
+      [31] ldc #2
+        - Integer [2130968576]
+      [33] invokespecial #45
+        - Methodref [com/example/vibratortest/MainActivity.a (I)[J]
+      [36] astore_2 v2
+      [37] goto +72 (target=109)
+      [40] aload_1 v1
+      [41] aload_0 v0
+      [42] getfield #32
+        - Fieldref [com/example/vibratortest/MainActivity.c Landroid/widget/Button;]
+      [45] ifacmpne +13 (target=58)
+      [48] aload_0 v0
+      [49] ldc #5
+        - Integer [2130968579]
+      [51] invokespecial #45
+        - Methodref [com/example/vibratortest/MainActivity.a (I)[J]
+      [54] astore_2 v2
+      [55] goto +54 (target=109)
+      [58] aload_1 v1
+      [59] aload_0 v0
+      [60] getfield #33
+        - Fieldref [com/example/vibratortest/MainActivity.d Landroid/widget/Button;]
+      [63] ifacmpne +13 (target=76)
+      [66] aload_0 v0
+      [67] ldc #6
+        - Integer [2130968580]
+      [69] invokespecial #45
+        - Methodref [com/example/vibratortest/MainActivity.a (I)[J]
+      [72] astore_2 v2
+      [73] goto +36 (target=109)
+      [76] aload_1 v1
+      [77] aload_0 v0
+      [78] getfield #34
+        - Fieldref [com/example/vibratortest/MainActivity.e Landroid/widget/Button;]
+      [81] ifacmpne +13 (target=94)
+      [84] aload_0 v0
+      [85] ldc #7
+        - Integer [2130968581]
+      [87] invokespecial #45
+        - Methodref [com/example/vibratortest/MainActivity.a (I)[J]
+      [90] astore_2 v2
+      [91] goto +18 (target=109)
+      [94] aload_1 v1
+      [95] aload_0 v0
+      [96] getfield #35
+        - Fieldref [com/example/vibratortest/MainActivity.f Landroid/widget/Button;]
+      [99] ifacmpne +10 (target=109)
+      [102] aload_0 v0
+      [103] ldc #3
+        - Integer [2130968577]
+      [105] invokespecial #45
+        - Methodref [com/example/vibratortest/MainActivity.a (I)[J]
+      [108] astore_2 v2
+      [109] aload_2 v2
+      [110] arraylength
+      [111] iconst_1
+      [112] ificmpne +14 (target=126)
+      [115] aload_0 v0
+      [116] getfield #36
+        - Fieldref [com/example/vibratortest/MainActivity.g Landroid/os/Vibrator;]
+      [119] aload_2 v2
+      [120] iconst_0
+      [121] laload
+      [122] invokevirtual #41
+        - Methodref [android/os/Vibrator.vibrate (J)V]
+      [125] return
+      [126] aload_0 v0
+      [127] getfield #36
+        - Fieldref [com/example/vibratortest/MainActivity.g Landroid/os/Vibrator;]
+      [130] aload_2 v2
+      [131] iconst_m1
+      [132] invokevirtual #42
+        - Methodref [android/os/Vibrator.vibrate ([JI)V]
+      [135] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       a(I)[J
+    Access flags: 0x2
+      = private long[] a(int)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 60, locals = 4, stack = 4):
+      [0] aconst_null
+      [1] astore_2 v2
+      [2] aload_0 v0
+      [3] invokevirtual #47
+        - Methodref [com/example/vibratortest/MainActivity.getResources ()Landroid/content/res/Resources;]
+      [6] iload_1 v1
+      [7] invokevirtual #40
+        - Methodref [android/content/res/Resources.getIntArray (I)[I]
+      [10] astore_2 v2
+      [11] goto +13 (target=24)
+      [14] astore_1 v1
+      [15] ldc #14
+        - String [LockPatternView]
+      [17] ldc #15
+        - String [Vibrate pattern missing, using default]
+      [19] aload_1 v1
+      [20] invokestatic #43
+        - Methodref [android/util/Log.e (Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I]
+      [23] pop
+      [24] aload_2 v2
+      [25] ifnonnull +7 (target=32)
+      [28] getstatic #37
+        - Fieldref [com/example/vibratortest/MainActivity.h [J]
+      [31] areturn
+      [32] aload_2 v2
+      [33] arraylength
+      [34] newarray 11
+      [36] astore_1 v1
+      [37] iconst_0
+      [38] istore_3 v3
+      [39] goto +13 (target=52)
+      [42] aload_1 v1
+      [43] iload_3 v3
+      [44] aload_2 v2
+      [45] iload_3 v3
+      [46] iaload
+      [47] i2l
+      [48] lastore
+      [49] iinc v3, 1
+      [52] iload_3 v3
+      [53] aload_2 v2
+      [54] arraylength
+      [55] ificmplt -13 (target=42)
+      [58] aload_1 v1
+      [59] areturn
+      Code attribute exceptions (count = 1):
+      - ExceptionInfo (2 -> 11: 14):
+      - Class [android/content/res/Resources$NotFoundException]
+      Code attribute attributes (attribute count = 0):
+
+Class file attributes (count = 0):
+

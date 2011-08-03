@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="prefs_entries_sampling_rate">
+		<item>SENSOR_DELAY_FASTEST</item>
+		<item>SENSOR_DELAY_GAME</item>
+		<item>SENSOR_DELAY_NORMAL</item>
+		<item>SENSOR_DELAY_UI</item>
+	</string-array>
+
+	<string-array name="prefs_entry_values_sampling_rate">
+		<item>SENSOR_DELAY_FASTEST</item>
+		<item>SENSOR_DELAY_GAME</item>
+		<item>SENSOR_DELAY_NORMAL</item>
+		<item>SENSOR_DELAY_UI</item>
+	</string-array>
+</resources>

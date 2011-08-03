@@ -1,0 +1,8 @@
+com.example.vibratortest.R
+com.example.vibratortest.R$array
+com.example.vibratortest.R$attr
+com.example.vibratortest.R$drawable
+com.example.vibratortest.R$id
+com.example.vibratortest.R$layout
+com.example.vibratortest.R$string
+com.example.vibratortest.UselessClass

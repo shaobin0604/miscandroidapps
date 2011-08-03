@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+  	<EditTextPreference android:key="@string/prefs_key_ip"
+  		android:title="@string/prefs_title_ip"
+  		android:dialogTitle="@string/prefs_dlg_title_ip"/>
+  	<EditTextPreference android:key="@string/prefs_key_port"
+  		android:title="@string/prefs_title_port"
+  		android:dialogTitle="@string/prefs_dlg_title_port"/>
+  	<ListPreference android:key="@string/prefs_key_sampling_rate"
+  		android:title="@string/prefs_title_sampling_rate"
+  		android:entries="@array/prefs_entries_sampling_rate"
+  		android:entryValues="@array/prefs_entry_values_sampling_rate"
+  		android:defaultValue="SENSOR_DELAY_GAME"/>
+  	<CheckBoxPreference android:key="@string/prefs_key_listen"
+  		android:title="@string/prefs_title_listen"
+  		android:defaultValue="false"/>
+</PreferenceScreen>
