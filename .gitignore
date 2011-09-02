@@ -4,5 +4,14 @@ Thumbs.db
 *.swp
 *.bak
 *~
+
 *.jar
 *.tmp
+
+# C/C++ build target file
+*.[oa]
+*.so
+
+# ndk build target
+libs
+obj
