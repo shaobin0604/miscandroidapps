@@ -18,7 +18,7 @@
 #       call build_one
 ######################################################
 
-NDK=/home/pekall/opt/android-ndk-r6
+NDK=/home/shaobin/opt/android-ndk-r6
 PLATFORM=$NDK/platforms/android-8/arch-arm/
 PREBUILT=$NDK/toolchains/arm-linux-androideabi-4.4.3/prebuilt/linux-x86
 

@@ -1,7 +1,7 @@
 prefix=
 exec_prefix=
 libdir=${pcfiledir}
-includedir=/home/pekall/workspace_private/BitmapVideoOutput/jni/ffmpeg-0.8
+includedir=/home/shaobin/Projects_private/miscandroidapps/BitmapVideoOutput/jni/ffmpeg-0.8
 
 Name: libswscale
 Description: FFmpeg image rescaling library

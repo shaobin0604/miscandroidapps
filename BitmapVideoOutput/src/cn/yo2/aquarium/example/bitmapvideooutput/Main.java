@@ -24,12 +24,10 @@ public class Main extends Activity implements VideoWindowListener, OnClickListen
 		System.loadLibrary("android_display");
 	}
 		
-	@Override
 	public void onSurfaceReady(AndroidVideoWindowImpl v) {
 		v.setViewWindowId(v);
 	}
 
-	@Override
 	public void onSurfaceDestroyed(AndroidVideoWindowImpl v) {
 		v.setViewWindowId(null);
 	}
@@ -51,7 +49,6 @@ public class Main extends Activity implements VideoWindowListener, OnClickListen
         mViewWindow.setListener(this);
     }
 
-	@Override
 	public void onClick(View v) {
 		File file = new File(Environment.getExternalStorageDirectory(), "video-2011-08-26-19-14-49.3gp"/*sample_100kbit.mp4*/);
 		mViewWindow.startPlayThread(file.getAbsolutePath());

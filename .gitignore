@@ -15,3 +15,10 @@ Thumbs.db
 # ndk build target
 libs
 obj
+
+*/jni/ffmpeg-0.8/ffmpeg
+*/jni/ffmpeg-0.8/ffmpeg_g
+*/jni/ffmpeg-0.8/ffprobe
+*/jni/ffmpeg-0.8/ffprobe_g
+
+local.properties
