@@ -33,6 +33,6 @@ Splash Activity。
 
 测试以下情况对点击 WebView 中链接行为的影响
 
-1. 是否设置 WebViewClient 
-2. WebViewClient#shouldOverrideUrlLoading 的返回值
+1. 是否设置 `WebViewClient` 
+2. `WebViewClient#shouldOverrideUrlLoading` 的返回值
 
