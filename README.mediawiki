@@ -29,5 +29,10 @@ Splash Activity。
 
 文件下载进度列表，没有使用 ListView
 
+== WebViewClientTest ==
 
+测试以下情况对网页中链接点击行为的影响
+
+1. 是否设置 WebViewClient 
+2. WebViewClient#shouldOverrideUrlLoading 的返回值
 

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="demo_entries">
+        <item>without WebViewClient</item>
+        <item>with default WebViewClient</item>
+        <item>with WebViewClient shouldOverrideUrlLoading</item>
+    </string-array>
+</resources>
