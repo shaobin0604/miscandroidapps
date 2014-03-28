@@ -1,3 +1,7 @@
+## [Screenshot](Screenshot) ##
+
+监听系统截屏(Android 4.0+)
+
 ## AppWare ##
 
 AppWare 应用界面，是要是底部TAB是用RadioGroup实现的。
